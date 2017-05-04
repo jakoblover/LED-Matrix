@@ -156,10 +156,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=KQNOUBNA
 
-[GeneratedDocument1]
-DocumentPath=Project Outputs for LED_Card\Design Rule Check - RGB_Matrix.html
-DItemRevisionGUID=
-
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0
@@ -774,7 +770,7 @@ OutputDefault9=0
 [OutputGroup10]
 Name=PostProcess Outputs
 Description=
-TargetPrinter=Canon iP7200 series WS
+TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=Copy Files
 OutputName1=Copy Files
