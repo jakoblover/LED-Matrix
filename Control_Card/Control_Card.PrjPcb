@@ -267,50 +267,38 @@ DocumentPath=Project Outputs for Control_Card\NC Drill\RGB_Matrix.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument4]
 DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument5]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.GBO
 DItemRevisionGUID=
 
-[GeneratedDocument6]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument7]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.GKO
 DItemRevisionGUID=
 
-[GeneratedDocument8]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument9]
+[GeneratedDocument8]
 DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument10]
+[GeneratedDocument9]
 DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument11]
+[GeneratedDocument10]
 DocumentPath=Project Outputs for Control_Card\NC Drill\RGB_Matrix.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument12]
-DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.REP
-DItemRevisionGUID=
-
-[GeneratedDocument13]
-DocumentPath=Project Outputs for Control_Card\Gerber\RGB_Matrix.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument14]
+[GeneratedDocument11]
 DocumentPath=Project Outputs for Control_Card\NC Drill\RGB_Matrix.TXT
 DItemRevisionGUID=
 

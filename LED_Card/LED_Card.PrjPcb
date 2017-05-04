@@ -156,6 +156,79 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=KQNOUBNA
 
+[Document8]
+DocumentPath=seedstudio.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for LED_Card\Design Rule Check - RGB_Matrix.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for LED_Card\NC Drill\RGB_Matrix.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for LED_Card\NC Drill\RGB_Matrix.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.REP
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for LED_Card\Gerber\RGB_Matrix.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for LED_Card\NC Drill\RGB_Matrix.TXT
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0
