@@ -1,5 +1,0 @@
-Record=TopLevelDocument|FileName=RGB_Matrix.SchDoc
-Record=SheetSymbol|SourceDocument=RGB_Matrix.SchDoc|Designator=LED Driver|SchDesignator=LED Driver|FileName=LED Driver.SchDoc|SymbolType=Normal|RawFileName=LED Driver.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=RGB_Matrix.SchDoc|Designator=Microcontroller|SchDesignator=Microcontroller|FileName=Microcontroller.SchDoc|SymbolType=Normal|RawFileName=Microcontroller.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=RGB_Matrix.SchDoc|Designator=Peripherals|SchDesignator=Peripherals|FileName=Peripherals.SchDoc|SymbolType=Normal|RawFileName=Peripherals.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=RGB_Matrix.SchDoc|Designator=Regulator|SchDesignator=Regulator|FileName=Regulator.SchDoc|SymbolType=Normal|RawFileName=Regulator.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
