@@ -31,30 +31,18 @@ int main(void)
 	
 	PORTA.DIRSET = 0b11111111; //ROW2
 	PORTA.OUTSET = 0b00000000; //ROW2
-	SPIC.DATA = 0b11111111;
+	SPIC.DATA = 0; //Used to trigger the SPI interrupts
 	
-	sei();
+	sei(); //activate global interrupts
 	PMIC.CTRL |= 7; //all interrupt levels are enabled
 	
-	
-	
-	
-	/*for(int i = 0; i < 36; i++){
-		SPIC.DATA = 0b11111111;
-		while(!(SPIC_STATUS & SPI_IF_bm)){};
-	}
-	SPI_blankAndLatch();*/
 
 	while (1) 
     {
-	/*if(PORTA.OUT == 0){
-		PORTA.OUT+=1;
-		_delay_us(50);
-	}
-		PORTA.OUT = PORTA.OUT << 1;
 		
-		_delay_us(50);*/
-    }
+		
+		
+	}
 }
 
 void clock_init(){

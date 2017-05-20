@@ -5,10 +5,6 @@
  *  Author: Jakob
  */ 
 
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <avr/pgmspace.h>
-
 #ifndef SPI_H_
 #define SPI_H_
 
@@ -17,7 +13,6 @@ void SPI_update(void);
 void SPI_blankAndLatch(void);
 void SPI_write(void);
 void SPIC_INT_vect (void);
-
 
 
 

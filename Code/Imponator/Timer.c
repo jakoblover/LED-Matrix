@@ -14,7 +14,6 @@
 #include "Timer.h"
 #include "SPI.h"
 
-uint8_t ranForFirstTime = 0;
 void Timer0_init(void)
 {
 	TCC0.CTRLA = 0b00000011; //PRESCALER CLK_DIV4

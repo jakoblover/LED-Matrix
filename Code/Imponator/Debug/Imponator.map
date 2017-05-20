@@ -3,9 +3,9 @@ Archive member included to satisfy reference by file (symbol)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_copy_data.o)
-                              SPI.o (__do_copy_data)
+                              Display.o (__do_copy_data)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_clear_bss.o)
-                              Display.o (__do_clear_bss)
+                              SPI.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -16,20 +16,6 @@ Discarded input sections
  .bss           0x00000000        0x0 Display.o
  .text.Display_setChannelBrightness
                 0x00000000       0x24 Display.o
- .text.Display_getChannelBrightness
-                0x00000000       0x24 Display.o
- .bss.DisplayData
-                0x00000000       0xc0 Display.o
- .debug_info    0x00000000      0x12b Display.o
- .debug_abbrev  0x00000000       0xae Display.o
- .debug_loc     0x00000000       0x4c Display.o
- .debug_aranges
-                0x00000000       0x28 Display.o
- .debug_ranges  0x00000000       0x18 Display.o
- .debug_line    0x00000000       0xc0 Display.o
- .debug_str     0x00000000      0x1d8 Display.o
- .comment       0x00000000       0x31 Display.o
- .debug_frame   0x00000000       0x34 Display.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -39,8 +25,6 @@ Discarded input sections
  .text          0x00000000        0x0 Timer.o
  .data          0x00000000        0x0 Timer.o
  .bss           0x00000000        0x0 Timer.o
- .bss.ranForFirstTime
-                0x00000000        0x1 Timer.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
@@ -216,7 +200,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x4ee
+.text           0x00000000      0x6de
  *(.vectors)
  .vectors       0x00000000      0x1fc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
                 0x00000000                __vector_default
@@ -232,35 +216,38 @@ END GROUP
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
  *(.progmem*)
-                0x000001fc                . = ALIGN (0x2)
+ .progmem.data.BrightnessLookUpTable
+                0x000001fc      0x200 SPI.o
+                0x000001fc                BrightnessLookUpTable
+                0x000003fc                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000001fc                __ctors_start = .
+                0x000003fc                __ctors_start = .
  *(.ctors)
-                0x000001fc                __ctors_end = .
-                0x000001fc                __dtors_start = .
+                0x000003fc                __ctors_end = .
+                0x000003fc                __dtors_start = .
  *(.dtors)
-                0x000001fc                __dtors_end = .
+                0x000003fc                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000001fc        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
-                0x000001fc                __init
+ .init0         0x000003fc        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
+                0x000003fc                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000001fc        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
+ .init2         0x000003fc        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000208       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_copy_data.o)
-                0x00000208                __do_copy_data
- .init4         0x00000222       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_clear_bss.o)
-                0x00000222                __do_clear_bss
+ .init4         0x00000408       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_copy_data.o)
+                0x00000408                __do_copy_data
+ .init4         0x00000422       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_clear_bss.o)
+                0x00000422                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -271,165 +258,168 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000232        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
+ .init9         0x00000432        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
  *(.init9)
  *(.text)
- .text          0x0000023a        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
-                0x0000023a                __vector_38
-                0x0000023a                __vector_104
-                0x0000023a                __vector_22
-                0x0000023a                __vector_63
-                0x0000023a                __vector_28
-                0x0000023a                __vector_67
-                0x0000023a                __vector_1
-                0x0000023a                __vector_119
-                0x0000023a                __vector_32
-                0x0000023a                __vector_75
-                0x0000023a                __vector_71
-                0x0000023a                __vector_91
-                0x0000023a                __vector_34
-                0x0000023a                __vector_62
-                0x0000023a                __vector_77
-                0x0000023a                __vector_102
-                0x0000023a                __vector_12
-                0x0000023a                __vector_55
-                0x0000023a                __vector_69
-                0x0000023a                __vector_81
-                0x0000023a                __vector_90
-                0x0000023a                __vector_46
-                0x0000023a                __bad_interrupt
-                0x0000023a                __vector_122
-                0x0000023a                __vector_72
-                0x0000023a                __vector_114
-                0x0000023a                __vector_6
-                0x0000023a                __vector_110
-                0x0000023a                __vector_31
-                0x0000023a                __vector_92
-                0x0000023a                __vector_35
-                0x0000023a                __vector_78
-                0x0000023a                __vector_74
-                0x0000023a                __vector_117
-                0x0000023a                __vector_39
-                0x0000023a                __vector_107
-                0x0000023a                __vector_3
-                0x0000023a                __vector_105
-                0x0000023a                __vector_98
-                0x0000023a                __vector_23
-                0x0000023a                __vector_68
-                0x0000023a                __vector_30
-                0x0000023a                __vector_73
-                0x0000023a                __vector_45
-                0x0000023a                __vector_25
-                0x0000023a                __vector_93
-                0x0000023a                __vector_61
-                0x0000023a                __vector_11
-                0x0000023a                __vector_54
-                0x0000023a                __vector_99
-                0x0000023a                __vector_13
-                0x0000023a                __vector_17
-                0x0000023a                __vector_19
-                0x0000023a                __vector_56
-                0x0000023a                __vector_7
-                0x0000023a                __vector_125
-                0x0000023a                __vector_49
-                0x0000023a                __vector_123
-                0x0000023a                __vector_41
-                0x0000023a                __vector_86
-                0x0000023a                __vector_100
-                0x0000023a                __vector_101
-                0x0000023a                __vector_64
-                0x0000023a                __vector_88
-                0x0000023a                __vector_109
-                0x0000023a                __vector_43
-                0x0000023a                __vector_27
-                0x0000023a                __vector_5
-                0x0000023a                __vector_113
-                0x0000023a                __vector_33
-                0x0000023a                __vector_76
-                0x0000023a                __vector_115
-                0x0000023a                __vector_47
-                0x0000023a                __vector_52
-                0x0000023a                __vector_37
-                0x0000023a                __vector_95
-                0x0000023a                __vector_103
-                0x0000023a                __vector_96
-                0x0000023a                __vector_89
-                0x0000023a                __vector_108
-                0x0000023a                __vector_4
-                0x0000023a                __vector_44
-                0x0000023a                __vector_82
-                0x0000023a                __vector_106
-                0x0000023a                __vector_118
-                0x0000023a                __vector_51
-                0x0000023a                __vector_9
-                0x0000023a                __vector_2
-                0x0000023a                __vector_21
-                0x0000023a                __vector_15
-                0x0000023a                __vector_66
-                0x0000023a                __vector_36
-                0x0000023a                __vector_79
-                0x0000023a                __vector_58
-                0x0000023a                __vector_70
-                0x0000023a                __vector_83
-                0x0000023a                __vector_29
-                0x0000023a                __vector_60
-                0x0000023a                __vector_121
-                0x0000023a                __vector_40
-                0x0000023a                __vector_85
-                0x0000023a                __vector_94
-                0x0000023a                __vector_126
-                0x0000023a                __vector_8
-                0x0000023a                __vector_26
-                0x0000023a                __vector_48
-                0x0000023a                __vector_124
-                0x0000023a                __vector_116
-                0x0000023a                __vector_112
-                0x0000023a                __vector_111
-                0x0000023a                __vector_80
-                0x0000023a                __vector_84
-                0x0000023a                __vector_57
-                0x0000023a                __vector_53
-                0x0000023a                __vector_10
-                0x0000023a                __vector_50
-                0x0000023a                __vector_16
-                0x0000023a                __vector_59
-                0x0000023a                __vector_18
-                0x0000023a                __vector_97
-                0x0000023a                __vector_20
-                0x0000023a                __vector_42
-                0x0000023a                __vector_87
-                0x0000023a                __vector_65
-                0x0000023a                __vector_120
-                0x0000023e                . = ALIGN (0x2)
+ .text          0x0000043a        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
+                0x0000043a                __vector_38
+                0x0000043a                __vector_104
+                0x0000043a                __vector_22
+                0x0000043a                __vector_63
+                0x0000043a                __vector_28
+                0x0000043a                __vector_67
+                0x0000043a                __vector_1
+                0x0000043a                __vector_119
+                0x0000043a                __vector_32
+                0x0000043a                __vector_75
+                0x0000043a                __vector_71
+                0x0000043a                __vector_91
+                0x0000043a                __vector_34
+                0x0000043a                __vector_62
+                0x0000043a                __vector_77
+                0x0000043a                __vector_102
+                0x0000043a                __vector_12
+                0x0000043a                __vector_55
+                0x0000043a                __vector_69
+                0x0000043a                __vector_81
+                0x0000043a                __vector_90
+                0x0000043a                __vector_46
+                0x0000043a                __bad_interrupt
+                0x0000043a                __vector_122
+                0x0000043a                __vector_72
+                0x0000043a                __vector_114
+                0x0000043a                __vector_6
+                0x0000043a                __vector_110
+                0x0000043a                __vector_31
+                0x0000043a                __vector_92
+                0x0000043a                __vector_35
+                0x0000043a                __vector_78
+                0x0000043a                __vector_74
+                0x0000043a                __vector_117
+                0x0000043a                __vector_39
+                0x0000043a                __vector_107
+                0x0000043a                __vector_3
+                0x0000043a                __vector_105
+                0x0000043a                __vector_98
+                0x0000043a                __vector_23
+                0x0000043a                __vector_68
+                0x0000043a                __vector_30
+                0x0000043a                __vector_73
+                0x0000043a                __vector_45
+                0x0000043a                __vector_25
+                0x0000043a                __vector_93
+                0x0000043a                __vector_61
+                0x0000043a                __vector_11
+                0x0000043a                __vector_54
+                0x0000043a                __vector_99
+                0x0000043a                __vector_13
+                0x0000043a                __vector_17
+                0x0000043a                __vector_19
+                0x0000043a                __vector_56
+                0x0000043a                __vector_7
+                0x0000043a                __vector_125
+                0x0000043a                __vector_49
+                0x0000043a                __vector_123
+                0x0000043a                __vector_41
+                0x0000043a                __vector_86
+                0x0000043a                __vector_100
+                0x0000043a                __vector_101
+                0x0000043a                __vector_64
+                0x0000043a                __vector_88
+                0x0000043a                __vector_109
+                0x0000043a                __vector_43
+                0x0000043a                __vector_27
+                0x0000043a                __vector_5
+                0x0000043a                __vector_113
+                0x0000043a                __vector_33
+                0x0000043a                __vector_76
+                0x0000043a                __vector_115
+                0x0000043a                __vector_47
+                0x0000043a                __vector_52
+                0x0000043a                __vector_37
+                0x0000043a                __vector_95
+                0x0000043a                __vector_103
+                0x0000043a                __vector_96
+                0x0000043a                __vector_89
+                0x0000043a                __vector_108
+                0x0000043a                __vector_4
+                0x0000043a                __vector_44
+                0x0000043a                __vector_82
+                0x0000043a                __vector_106
+                0x0000043a                __vector_118
+                0x0000043a                __vector_51
+                0x0000043a                __vector_9
+                0x0000043a                __vector_2
+                0x0000043a                __vector_21
+                0x0000043a                __vector_15
+                0x0000043a                __vector_66
+                0x0000043a                __vector_36
+                0x0000043a                __vector_79
+                0x0000043a                __vector_58
+                0x0000043a                __vector_70
+                0x0000043a                __vector_83
+                0x0000043a                __vector_29
+                0x0000043a                __vector_60
+                0x0000043a                __vector_121
+                0x0000043a                __vector_40
+                0x0000043a                __vector_85
+                0x0000043a                __vector_94
+                0x0000043a                __vector_126
+                0x0000043a                __vector_8
+                0x0000043a                __vector_26
+                0x0000043a                __vector_48
+                0x0000043a                __vector_124
+                0x0000043a                __vector_116
+                0x0000043a                __vector_112
+                0x0000043a                __vector_111
+                0x0000043a                __vector_80
+                0x0000043a                __vector_84
+                0x0000043a                __vector_57
+                0x0000043a                __vector_53
+                0x0000043a                __vector_10
+                0x0000043a                __vector_50
+                0x0000043a                __vector_16
+                0x0000043a                __vector_59
+                0x0000043a                __vector_18
+                0x0000043a                __vector_97
+                0x0000043a                __vector_20
+                0x0000043a                __vector_42
+                0x0000043a                __vector_87
+                0x0000043a                __vector_65
+                0x0000043a                __vector_120
+                0x0000043e                . = ALIGN (0x2)
  *(.text.*)
+ .text.Display_getChannelBrightness
+                0x0000043e       0x24 Display.o
+                0x0000043e                Display_getChannelBrightness
  .text.clock_init
-                0x0000023e       0x1c main.o
-                0x0000023e                clock_init
- .text.main     0x0000025a       0x28 main.o
-                0x0000025a                main
+                0x00000462       0x1c main.o
+                0x00000462                clock_init
+ .text.main     0x0000047e       0x28 main.o
+                0x0000047e                main
  .text.SPI_init
-                0x00000282       0x4c SPI.o
-                0x00000282                SPI_init
+                0x000004a6       0x4c SPI.o
+                0x000004a6                SPI_init
  .text.SPI_update
-                0x000002ce        0xc SPI.o
-                0x000002ce                SPI_update
+                0x000004f2        0xc SPI.o
+                0x000004f2                SPI_update
  .text.SPI_blankAndLatch
-                0x000002da       0x12 SPI.o
-                0x000002da                SPI_blankAndLatch
+                0x000004fe       0x12 SPI.o
+                0x000004fe                SPI_blankAndLatch
  .text.__vector_24
-                0x000002ec      0x19a SPI.o
-                0x000002ec                __vector_24
+                0x00000510      0x166 SPI.o
+                0x00000510                __vector_24
  .text.Timer0_init
-                0x00000486       0x14 Timer.o
-                0x00000486                Timer0_init
+                0x00000676       0x14 Timer.o
+                0x00000676                Timer0_init
  .text.__vector_14
-                0x0000049a       0x50 Timer.o
-                0x0000049a                __vector_14
-                0x000004ea                . = ALIGN (0x2)
+                0x0000068a       0x50 Timer.o
+                0x0000068a                __vector_14
+                0x000006da                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000004ea        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
-                0x000004ea                _exit
-                0x000004ea                exit
+ .fini9         0x000006da        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
+                0x000006da                _exit
+                0x000006da                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -448,50 +438,47 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000004ea        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
+ .fini0         0x000006da        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
  *(.fini0)
-                0x000004ee                _etext = .
+                0x000006de                _etext = .
 
-.data           0x00802000      0x2c0 load address 0x000004ee
+.data           0x00802000       0xc0 load address 0x000006de
                 0x00802000                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
  .data.DisplayData
-                0x00802000       0xc0 SPI.o
+                0x00802000       0xc0 Display.o
                 0x00802000                DisplayData
- .data.BrightnessLookUpTablelol
-                0x008020c0      0x200 SPI.o
-                0x008020c0                BrightnessLookUpTablelol
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x008022c0                . = ALIGN (0x2)
-                0x008022c0                _edata = .
-                0x008022c0                PROVIDE (__data_end, .)
+                0x008020c0                . = ALIGN (0x2)
+                0x008020c0                _edata = .
+                0x008020c0                PROVIDE (__data_end, .)
 
-.bss            0x008022c0        0x7
-                0x008022c0                PROVIDE (__bss_start, .)
+.bss            0x008020c0        0x7
+                0x008020c0                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.second12Bits.4610
-                0x008022c0        0x2 SPI.o
- .bss.first12Bits.4609
-                0x008022c2        0x2 SPI.o
- .bss._12bytesSent.4606
-                0x008022c4        0x1 SPI.o
- .bss.row.4608  0x008022c5        0x1 SPI.o
- .bss._8bytesSent.4607
-                0x008022c6        0x1 SPI.o
+ .bss.second12Bits.4616
+                0x008020c0        0x2 SPI.o
+ .bss.first12Bits.4615
+                0x008020c2        0x2 SPI.o
+ .bss.row.4614  0x008020c4        0x1 SPI.o
+ .bss._12bytesSent.4612
+                0x008020c5        0x1 SPI.o
+ .bss._8bytesSent.4613
+                0x008020c6        0x1 SPI.o
  *(COMMON)
-                0x008022c7                PROVIDE (__bss_end, .)
-                0x000004ee                __data_load_start = LOADADDR (.data)
-                0x000007ae                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x008020c7                PROVIDE (__bss_end, .)
+                0x000006de                __data_load_start = LOADADDR (.data)
+                0x0000079e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008022c7        0x0
+.noinit         0x008020c7        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008022c7                _end = .
+                0x008020c7                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -533,8 +520,9 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 main.o
+ .comment       0x00000000       0x30 Display.o
                                  0x31 (size before relaxing)
+ .comment       0x00000030       0x31 main.o
  .comment       0x00000030       0x31 SPI.o
  .comment       0x00000030       0x31 Timer.o
 
@@ -558,59 +546,68 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x88
+.debug_aranges  0x00000000       0xb0
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x28 main.o
+                0x00000000       0x28 Display.o
  .debug_aranges
-                0x00000028       0x38 SPI.o
+                0x00000028       0x28 main.o
  .debug_aranges
-                0x00000060       0x28 Timer.o
+                0x00000050       0x38 SPI.o
+ .debug_aranges
+                0x00000088       0x28 Timer.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3818
+.debug_info     0x00000000     0x398b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x284f C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
- .debug_info    0x0000284f      0x4b3 main.o
- .debug_info    0x00002d02      0x44e SPI.o
- .debug_info    0x00003150      0x6c8 Timer.o
+ .debug_info    0x0000284f      0x12c Display.o
+ .debug_info    0x0000297b      0x4b3 main.o
+ .debug_info    0x00002e2e      0x4a7 SPI.o
+ .debug_info    0x000032d5      0x6b6 Timer.o
 
-.debug_abbrev   0x00000000     0x2953
+.debug_abbrev   0x00000000     0x2a16
  *(.debug_abbrev)
  .debug_abbrev  0x00000000     0x262c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
- .debug_abbrev  0x0000262c       0xe8 main.o
- .debug_abbrev  0x00002714      0x130 SPI.o
- .debug_abbrev  0x00002844      0x10f Timer.o
+ .debug_abbrev  0x0000262c       0xb0 Display.o
+ .debug_abbrev  0x000026dc       0xe8 main.o
+ .debug_abbrev  0x000027c4      0x154 SPI.o
+ .debug_abbrev  0x00002918       0xfe Timer.o
 
-.debug_line     0x00000000      0x85d
+.debug_line     0x00000000      0x939
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x391 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
- .debug_line    0x00000391      0x165 main.o
- .debug_line    0x000004f6      0x234 SPI.o
- .debug_line    0x0000072a      0x133 Timer.o
+ .debug_line    0x00000391       0xc0 Display.o
+ .debug_line    0x00000451      0x165 main.o
+ .debug_line    0x000005b6      0x250 SPI.o
+ .debug_line    0x00000806      0x133 Timer.o
 
-.debug_frame    0x00000000      0x150
+.debug_frame    0x00000000      0x184
  *(.debug_frame)
- .debug_frame   0x00000000       0x34 main.o
- .debug_frame   0x00000034       0xa0 SPI.o
- .debug_frame   0x000000d4       0x7c Timer.o
+ .debug_frame   0x00000000       0x34 Display.o
+ .debug_frame   0x00000034       0x34 main.o
+ .debug_frame   0x00000068       0xa0 SPI.o
+ .debug_frame   0x00000108       0x7c Timer.o
 
-.debug_str      0x00000000     0x23a0
+.debug_str      0x00000000     0x23fb
  *(.debug_str)
  .debug_str     0x00000000     0x1aa8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega64a4u/avrxmega4/crtatxmega64a4u.o
- .debug_str     0x00001aa8      0x3ec main.o
+ .debug_str     0x00001aa8      0x19f Display.o
+                                0x1d8 (size before relaxing)
+ .debug_str     0x00001c47      0x2b5 main.o
                                 0x42a (size before relaxing)
- .debug_str     0x00001e94      0x25d SPI.o
-                                0x4d7 (size before relaxing)
- .debug_str     0x000020f1      0x2af Timer.o
-                                0x48a (size before relaxing)
+ .debug_str     0x00001efc      0x260 SPI.o
+                                0x4f7 (size before relaxing)
+ .debug_str     0x0000215c      0x29f Timer.o
+                                0x47a (size before relaxing)
 
-.debug_loc      0x00000000      0x252
+.debug_loc      0x00000000      0x2e6
  *(.debug_loc)
- .debug_loc     0x00000000      0x187 SPI.o
- .debug_loc     0x00000187       0xcb Timer.o
+ .debug_loc     0x00000000       0x4c Display.o
+ .debug_loc     0x0000004c      0x1cf SPI.o
+ .debug_loc     0x0000021b       0xcb Timer.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -630,11 +627,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x58
+.debug_ranges   0x00000000       0x70
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x18 main.o
- .debug_ranges  0x00000018       0x28 SPI.o
- .debug_ranges  0x00000040       0x18 Timer.o
+ .debug_ranges  0x00000000       0x18 Display.o
+ .debug_ranges  0x00000018       0x18 main.o
+ .debug_ranges  0x00000030       0x28 SPI.o
+ .debug_ranges  0x00000058       0x18 Timer.o
 
 .debug_macro
  *(.debug_macro)
