@@ -88,8 +88,9 @@ ISR ( SPIC_INT_vect )
 		SPIC.DATA = c;                  // send data
 		_8bytesSent++;
 		
-		if ( _12bytesSent > 24  || _8bytesSent > 36 )					// if reached end
+		if ( _12bytesSent >= 24  || _8bytesSent >= 36 )					// if reached end
 		{
+			while(!(SPIC_STATUS & SPI_IF_bm)){}
 			row++;
 			SPI_blankAndLatch();
 			
@@ -97,11 +98,11 @@ ISR ( SPIC_INT_vect )
 			_12bytesSent	=		0;
 			_8bytesSent		=		0;
 			
-			if(row > 8){
+			if(row > 7){
 				row = 0;
 				PORTA.OUT = (1<<0);
 			}
-			else if (row == 1) PORTA.OUT = (1<<0);
+			else if (row == 0) PORTA.OUT = (1<<0);
 			else PORTA.OUT= PORTA.OUT << 1;
 			
 		}	
