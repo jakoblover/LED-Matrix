@@ -91,7 +91,6 @@ ISR ( SPIC_INT_vect )
 		if ( _12bytesSent >= 24  || _8bytesSent >= 36 )					// if reached end
 		{
 			while(!(SPIC_STATUS & SPI_IF_bm)){}
-			row++;
 			SPI_blankAndLatch();
 			
 			SPIC.INTCTRL	&=		~( ( 1 << 0 ) | ( 1 << 1 ) );		// turn off interrupts
@@ -104,6 +103,37 @@ ISR ( SPIC_INT_vect )
 			}
 			else if (row == 0) PORTA.OUT = (1<<0);
 			else PORTA.OUT= PORTA.OUT << 1;
+			
+			/*
+			switch(row){
+				case(0):
+				PORTA.OUT = 0b00000001;
+				break;
+				case(1):
+				PORTA.OUT = 0b00000010;
+				break;
+				case(2):
+				PORTA.OUT = 0b00000100;
+				break;
+				case(3):
+				PORTA.OUT = 0b00001000;
+				break;
+				case(4):
+				PORTA.OUT = 0b00010000;
+				break;
+				case(5):
+				PORTA.OUT = 0b00100000;
+				break;
+				case(6):
+				PORTA.OUT = 0b01000000;
+				break;
+				case(7):
+				PORTA.OUT = 0b10000000;
+				break;
+			}*/
+			row++;
+			if(row == 8)
+				row = 0;
 			
 		}	
 }
