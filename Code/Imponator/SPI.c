@@ -89,7 +89,7 @@ ISR ( SPIC_INT_vect )
 	switch ( _8bytesSent % 3 )			
 	{
 		case ( 0 ):
-			if(row == 0)
+			if(row == 0 || row==5)
 				first12Bits = 0b11111111;
 			else first12Bits = 0b00000000;
 			c = ( uint8_t ) (first12Bits >> 4);
@@ -100,7 +100,7 @@ ISR ( SPIC_INT_vect )
 	
 
 		case( 1 ):
-			if(row == 0)
+			if(row == 0 || row == 5)
 				second12Bits = 0b11111111;
 			else second12Bits = 0b00000000;
 			++_12bytesSent;
@@ -131,7 +131,7 @@ ISR ( SPIC_INT_vect )
 		SPIC.DATA = c;                  // send data
 		_8bytesSent++;
 		
-		if ( _12bytesSent >= 24  || _8bytesSent >= 36 )					// if reached end
+		if ( _12bytesSent > 24  || _8bytesSent > 36 )					// if reached end
 		{
 			
 			SPI_blankAndLatch();
@@ -140,11 +140,12 @@ ISR ( SPIC_INT_vect )
 			_12bytesSent	=		0;
 			_8bytesSent		=		0;
 			
-			PORTA.OUT = PORTA.OUT << 1;
+			
 			if(++row > 7){
 				row = 0;
-				PORTA.OUT+=1;
+				PORTA.OUT=1;
 			}
+			else PORTA.OUT= PORTA.OUT << 1;
 			
 		}	
 }

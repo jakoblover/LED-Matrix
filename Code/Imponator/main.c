@@ -26,13 +26,18 @@ int main(void)
 	SPI_init();
 	Timer0_init();
 	
+	
+	
+	
+	PORTA.DIRSET = 0b11111111; //ROW2
+	PORTA.OUTSET = 0b00000000; //ROW2
+	SPIC.DATA = 0b11111111;
+	
 	sei();
 	PMIC.CTRL |= 7; //all interrupt levels are enabled
 	
 	
-	PORTA.DIRSET = 0b11111111; //ROW2
-	PORTA.OUTSET = 0b00000001; //ROW2
-	SPIC.DATA = 0b00000000;
+	
 	
 	/*for(int i = 0; i < 36; i++){
 		SPIC.DATA = 0b11111111;
