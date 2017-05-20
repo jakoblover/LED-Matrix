@@ -13,14 +13,24 @@
 #include <string.h>
 #include "Display.h"
 
-static uint8_t DisplayData[8][24] = {{0}};
+static uint8_t DisplayData[8][24] = 
+{
+	{0b00000000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},	
+	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},	
+	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},	
+	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+};
+
 
 void Display_setChannelBrightness(int row, int channel, uint8_t brightness){
 	DisplayData[row][channel] = brightness;
 }
 
 uint8_t Display_getChannelBrightness(int row, int channel){
-	
 	return DisplayData[row][channel];
 }
 

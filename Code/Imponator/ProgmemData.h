@@ -5,12 +5,13 @@
  *  Author: Jakob
  */ 
 
-#include <avr/pgmspace.h>
+
 
 #ifndef PROGMEMDATA_H_
 #define PROGMEMDATA_H_
+#include <avr/pgmspace.h>
 
-const uint16_t BrightnessLookUpTable[256] PROGMEM =
+/*const uint16_t BrightnessLookUpTablee[256] =
 {
 	0,0,0,1,1,2,3,4,5,6,7,9,10,12,14,16,18,20,22,25,27,30,33,36,39,42,45,49,52,56,
 	60,64,68,72,77,81,86,90,95,100,105,111,116,121,127,133,139,145,151,157,163,170,
@@ -26,7 +27,7 @@ const uint16_t BrightnessLookUpTable[256] PROGMEM =
 	2966,2994,3021,3049,3076,3104,3132,3161,3189,3217,3246,3274,3303,3332,3361,3390,3420,
 	3449,3479,3508,3538,3568,3598,3628,3659,3689,3720,3750,3781,3812,3843,3874,3906,3937,
 	3969,4000,4032,4064,4095,4095
-};
+};*/
 
 
 #endif /* PROGMEMDATA_H_ */

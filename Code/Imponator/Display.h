@@ -15,4 +15,6 @@
 void Display_setChannelBrightness(int row, int channel, uint8_t brightness);
 uint8_t Display_getChannelBrightness(int row, int channel);
 
+
+
 #endif /* DISPLAY_H_ */

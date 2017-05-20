@@ -5,7 +5,7 @@
  * Author : Jakob
  */ 
 
-#define F_CPU 32000000 //change this
+#define F_CPU 32000000UL //change this
 
 #include <avr/io.h>
 #include <avr/xmega.h>
@@ -31,18 +31,24 @@ int main(void)
 	
 	
 	PORTA.DIRSET = 0b11111111; //ROW2
-	PORTA.OUTSET = 0b00000000; //ROW2
-	SPIC.DATA = 0x00;
+	PORTA.OUTSET = 0b00000001; //ROW2
+	SPIC.DATA = 0b00000000;
+	
+	/*for(int i = 0; i < 36; i++){
+		SPIC.DATA = 0b11111111;
+		while(!(SPIC_STATUS & SPI_IF_bm)){};
+	}
+	SPI_blankAndLatch();*/
 
 	while (1) 
     {
 	/*if(PORTA.OUT == 0){
 		PORTA.OUT+=1;
-		_delay_ms(100);
+		_delay_us(50);
 	}
 		PORTA.OUT = PORTA.OUT << 1;
 		
-		_delay_ms(100);*/
+		_delay_us(50);*/
     }
 }
 
