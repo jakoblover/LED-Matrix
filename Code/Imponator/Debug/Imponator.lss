@@ -3,31 +3,31 @@ Imponator.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000004da  00000000  00000000  00000094  2**1
+  0 .text         000004ee  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         000002c0  00802000  000004da  0000056e  2**0
+  1 .data         000002c0  00802000  000004ee  00000582  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000007  008022c0  008022c0  0000082e  2**0
+  2 .bss          00000007  008022c0  008022c0  00000842  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  0000082e  2**0
+  3 .comment      00000030  00000000  00000000  00000842  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000860  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000874  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000088  00000000  00000000  000008a0  2**0
+  5 .debug_aranges 00000088  00000000  00000000  000008b4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00003818  00000000  00000000  00000928  2**0
+  6 .debug_info   00003818  00000000  00000000  0000093c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00002953  00000000  00000000  00004140  2**0
+  7 .debug_abbrev 00002953  00000000  00000000  00004154  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000857  00000000  00000000  00006a93  2**0
+  8 .debug_line   0000085d  00000000  00000000  00006aa7  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000150  00000000  00000000  000072ec  2**2
+  9 .debug_frame  00000150  00000000  00000000  00007304  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000023a0  00000000  00000000  0000743c  2**0
+ 10 .debug_str    000023a0  00000000  00000000  00007454  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000252  00000000  00000000  000097dc  2**0
+ 11 .debug_loc    00000252  00000000  00000000  000097f4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000058  00000000  00000000  00009a2e  2**0
+ 12 .debug_ranges 00000058  00000000  00000000  00009a46  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -47,7 +47,7 @@ Disassembly of section .text:
   2c:	0c 94 1d 01 	jmp	0x23a	; 0x23a <__bad_interrupt>
   30:	0c 94 1d 01 	jmp	0x23a	; 0x23a <__bad_interrupt>
   34:	0c 94 1d 01 	jmp	0x23a	; 0x23a <__bad_interrupt>
-  38:	0c 94 43 02 	jmp	0x486	; 0x486 <__vector_14>
+  38:	0c 94 4d 02 	jmp	0x49a	; 0x49a <__vector_14>
   3c:	0c 94 1d 01 	jmp	0x23a	; 0x23a <__bad_interrupt>
   40:	0c 94 1d 01 	jmp	0x23a	; 0x23a <__bad_interrupt>
   44:	0c 94 1d 01 	jmp	0x23a	; 0x23a <__bad_interrupt>
@@ -173,7 +173,7 @@ Disassembly of section .text:
  208:	12 e2       	ldi	r17, 0x22	; 34
  20a:	a0 e0       	ldi	r26, 0x00	; 0
  20c:	b0 e2       	ldi	r27, 0x20	; 32
- 20e:	ea ed       	ldi	r30, 0xDA	; 218
+ 20e:	ee ee       	ldi	r30, 0xEE	; 238
  210:	f4 e0       	ldi	r31, 0x04	; 4
  212:	00 e0       	ldi	r16, 0x00	; 0
  214:	0b bf       	out	0x3b, r16	; 59
@@ -198,7 +198,7 @@ Disassembly of section .text:
  22e:	b2 07       	cpc	r27, r18
  230:	e1 f7       	brne	.-8      	; 0x22a <.do_clear_bss_loop>
  232:	0e 94 2d 01 	call	0x25a	; 0x25a <main>
- 236:	0c 94 6b 02 	jmp	0x4d6	; 0x4d6 <_exit>
+ 236:	0c 94 75 02 	jmp	0x4ea	; 0x4ea <_exit>
 
 0000023a <__bad_interrupt>:
  23a:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -237,7 +237,7 @@ int main(void)
 	SPI_init();
  25e:	0e 94 41 01 	call	0x282	; 0x282 <SPI_init>
 	Timer0_init();
- 262:	0e 94 39 02 	call	0x472	; 0x472 <Timer0_init>
+ 262:	0e 94 43 02 	call	0x486	; 0x486 <Timer0_init>
 	
 	
 	
@@ -263,7 +263,7 @@ int main(void)
  280:	ff cf       	rjmp	.-2      	; 0x280 <main+0x26>
 
 00000282 <SPI_init>:
-	{0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0}
+	{0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111,0,0,0b11111111}
 };
 
 
@@ -394,273 +394,282 @@ ISR ( SPIC_INT_vect )
  328:	29 2f       	mov	r18, r25
  32a:	28 1b       	sub	r18, r24
  32c:	21 30       	cpi	r18, 0x01	; 1
- 32e:	61 f1       	breq	.+88     	; 0x388 <__vector_24+0x9c>
+ 32e:	89 f1       	breq	.+98     	; 0x392 <__vector_24+0xa6>
  330:	20 f0       	brcs	.+8      	; 0x33a <__vector_24+0x4e>
  332:	22 30       	cpi	r18, 0x02	; 2
  334:	09 f4       	brne	.+2      	; 0x338 <__vector_24+0x4c>
- 336:	52 c0       	rjmp	.+164    	; 0x3dc <__vector_24+0xf0>
- 338:	59 c0       	rjmp	.+178    	; 0x3ec <__vector_24+0x100>
+ 336:	5c c0       	rjmp	.+184    	; 0x3f0 <__vector_24+0x104>
+ 338:	63 c0       	rjmp	.+198    	; 0x400 <__LOCK_REGION_LENGTH__>
 	{
 		case ( 0 ):
-				first12Bits = BrightnessLookUpTablelol[DisplayData[row][_12bytesSent]];
+				first12Bits = BrightnessLookUpTablelol[DisplayData[row][23-_12bytesSent]];
  33a:	20 91 c5 22 	lds	r18, 0x22C5	; 0x8022c5 <row.4608>
  33e:	30 e0       	ldi	r19, 0x00	; 0
  340:	80 91 c4 22 	lds	r24, 0x22C4	; 0x8022c4 <_12bytesSent.4606>
- 344:	f9 01       	movw	r30, r18
- 346:	ee 0f       	add	r30, r30
- 348:	ff 1f       	adc	r31, r31
- 34a:	e2 0f       	add	r30, r18
- 34c:	f3 1f       	adc	r31, r19
- 34e:	ee 0f       	add	r30, r30
- 350:	ff 1f       	adc	r31, r31
- 352:	ee 0f       	add	r30, r30
- 354:	ff 1f       	adc	r31, r31
- 356:	ee 0f       	add	r30, r30
- 358:	ff 1f       	adc	r31, r31
- 35a:	e0 50       	subi	r30, 0x00	; 0
- 35c:	f0 4e       	sbci	r31, 0xE0	; 224
- 35e:	e8 0f       	add	r30, r24
- 360:	f1 1d       	adc	r31, r1
- 362:	e0 81       	ld	r30, Z
- 364:	f0 e0       	ldi	r31, 0x00	; 0
- 366:	ee 0f       	add	r30, r30
- 368:	ff 1f       	adc	r31, r31
- 36a:	e0 54       	subi	r30, 0x40	; 64
- 36c:	ff 4d       	sbci	r31, 0xDF	; 223
- 36e:	20 81       	ld	r18, Z
- 370:	31 81       	ldd	r19, Z+1	; 0x01
- 372:	20 93 c2 22 	sts	0x22C2, r18	; 0x8022c2 <first12Bits.4609>
- 376:	30 93 c3 22 	sts	0x22C3, r19	; 0x8022c3 <first12Bits.4609+0x1>
+ 344:	47 e1       	ldi	r20, 0x17	; 23
+ 346:	50 e0       	ldi	r21, 0x00	; 0
+ 348:	48 1b       	sub	r20, r24
+ 34a:	51 09       	sbc	r21, r1
+ 34c:	b9 01       	movw	r22, r18
+ 34e:	66 0f       	add	r22, r22
+ 350:	77 1f       	adc	r23, r23
+ 352:	26 0f       	add	r18, r22
+ 354:	37 1f       	adc	r19, r23
+ 356:	22 0f       	add	r18, r18
+ 358:	33 1f       	adc	r19, r19
+ 35a:	22 0f       	add	r18, r18
+ 35c:	33 1f       	adc	r19, r19
+ 35e:	22 0f       	add	r18, r18
+ 360:	33 1f       	adc	r19, r19
+ 362:	20 50       	subi	r18, 0x00	; 0
+ 364:	30 4e       	sbci	r19, 0xE0	; 224
+ 366:	f9 01       	movw	r30, r18
+ 368:	e4 0f       	add	r30, r20
+ 36a:	f5 1f       	adc	r31, r21
+ 36c:	e0 81       	ld	r30, Z
+ 36e:	f0 e0       	ldi	r31, 0x00	; 0
+ 370:	ee 0f       	add	r30, r30
+ 372:	ff 1f       	adc	r31, r31
+ 374:	e0 54       	subi	r30, 0x40	; 64
+ 376:	ff 4d       	sbci	r31, 0xDF	; 223
+ 378:	20 81       	ld	r18, Z
+ 37a:	31 81       	ldd	r19, Z+1	; 0x01
+ 37c:	20 93 c2 22 	sts	0x22C2, r18	; 0x8022c2 <first12Bits.4609>
+ 380:	30 93 c3 22 	sts	0x22C3, r19	; 0x8022c3 <first12Bits.4609+0x1>
 			c = ( uint8_t ) (first12Bits >> 4);
- 37a:	32 95       	swap	r19
- 37c:	22 95       	swap	r18
- 37e:	2f 70       	andi	r18, 0x0F	; 15
- 380:	23 27       	eor	r18, r19
- 382:	3f 70       	andi	r19, 0x0F	; 15
- 384:	23 27       	eor	r18, r19
+ 384:	32 95       	swap	r19
+ 386:	22 95       	swap	r18
+ 388:	2f 70       	andi	r18, 0x0F	; 15
+ 38a:	23 27       	eor	r18, r19
+ 38c:	3f 70       	andi	r19, 0x0F	; 15
+ 38e:	23 27       	eor	r18, r19
 			
 			break;
- 386:	33 c0       	rjmp	.+102    	; 0x3ee <__vector_24+0x102>
+ 390:	38 c0       	rjmp	.+112    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
 	
 		// case 0: read out the 16bits value from the lookupTable. Send MSB
 	
 
 		case( 1 ):
-			second12Bits = BrightnessLookUpTablelol[DisplayData[row][++_12bytesSent]];
- 388:	20 91 c5 22 	lds	r18, 0x22C5	; 0x8022c5 <row.4608>
- 38c:	30 e0       	ldi	r19, 0x00	; 0
- 38e:	80 91 c4 22 	lds	r24, 0x22C4	; 0x8022c4 <_12bytesSent.4606>
- 392:	8f 5f       	subi	r24, 0xFF	; 255
- 394:	80 93 c4 22 	sts	0x22C4, r24	; 0x8022c4 <_12bytesSent.4606>
- 398:	f9 01       	movw	r30, r18
- 39a:	ee 0f       	add	r30, r30
- 39c:	ff 1f       	adc	r31, r31
- 39e:	e2 0f       	add	r30, r18
- 3a0:	f3 1f       	adc	r31, r19
- 3a2:	ee 0f       	add	r30, r30
- 3a4:	ff 1f       	adc	r31, r31
- 3a6:	ee 0f       	add	r30, r30
- 3a8:	ff 1f       	adc	r31, r31
- 3aa:	ee 0f       	add	r30, r30
- 3ac:	ff 1f       	adc	r31, r31
- 3ae:	e0 50       	subi	r30, 0x00	; 0
- 3b0:	f0 4e       	sbci	r31, 0xE0	; 224
- 3b2:	e8 0f       	add	r30, r24
- 3b4:	f1 1d       	adc	r31, r1
- 3b6:	e0 81       	ld	r30, Z
- 3b8:	f0 e0       	ldi	r31, 0x00	; 0
- 3ba:	ee 0f       	add	r30, r30
- 3bc:	ff 1f       	adc	r31, r31
- 3be:	e0 54       	subi	r30, 0x40	; 64
- 3c0:	ff 4d       	sbci	r31, 0xDF	; 223
- 3c2:	80 81       	ld	r24, Z
- 3c4:	21 81       	ldd	r18, Z+1	; 0x01
- 3c6:	80 93 c0 22 	sts	0x22C0, r24	; 0x8022c0 <__data_end>
- 3ca:	20 93 c1 22 	sts	0x22C1, r18	; 0x8022c1 <__data_end+0x1>
+			++_12bytesSent;
+ 392:	80 91 c4 22 	lds	r24, 0x22C4	; 0x8022c4 <_12bytesSent.4606>
+ 396:	8f 5f       	subi	r24, 0xFF	; 255
+ 398:	80 93 c4 22 	sts	0x22C4, r24	; 0x8022c4 <_12bytesSent.4606>
+			second12Bits = BrightnessLookUpTablelol[DisplayData[row][23-_12bytesSent]];
+ 39c:	20 91 c5 22 	lds	r18, 0x22C5	; 0x8022c5 <row.4608>
+ 3a0:	30 e0       	ldi	r19, 0x00	; 0
+ 3a2:	47 e1       	ldi	r20, 0x17	; 23
+ 3a4:	50 e0       	ldi	r21, 0x00	; 0
+ 3a6:	48 1b       	sub	r20, r24
+ 3a8:	51 09       	sbc	r21, r1
+ 3aa:	b9 01       	movw	r22, r18
+ 3ac:	66 0f       	add	r22, r22
+ 3ae:	77 1f       	adc	r23, r23
+ 3b0:	26 0f       	add	r18, r22
+ 3b2:	37 1f       	adc	r19, r23
+ 3b4:	22 0f       	add	r18, r18
+ 3b6:	33 1f       	adc	r19, r19
+ 3b8:	22 0f       	add	r18, r18
+ 3ba:	33 1f       	adc	r19, r19
+ 3bc:	22 0f       	add	r18, r18
+ 3be:	33 1f       	adc	r19, r19
+ 3c0:	20 50       	subi	r18, 0x00	; 0
+ 3c2:	30 4e       	sbci	r19, 0xE0	; 224
+ 3c4:	f9 01       	movw	r30, r18
+ 3c6:	e4 0f       	add	r30, r20
+ 3c8:	f5 1f       	adc	r31, r21
+ 3ca:	e0 81       	ld	r30, Z
+ 3cc:	f0 e0       	ldi	r31, 0x00	; 0
+ 3ce:	ee 0f       	add	r30, r30
+ 3d0:	ff 1f       	adc	r31, r31
+ 3d2:	e0 54       	subi	r30, 0x40	; 64
+ 3d4:	ff 4d       	sbci	r31, 0xDF	; 223
+ 3d6:	80 81       	ld	r24, Z
+ 3d8:	21 81       	ldd	r18, Z+1	; 0x01
+ 3da:	80 93 c0 22 	sts	0x22C0, r24	; 0x8022c0 <__data_end>
+ 3de:	20 93 c1 22 	sts	0x22C1, r18	; 0x8022c1 <__data_end+0x1>
 			c = (uint8_t) ( first12Bits << 4 );
- 3ce:	80 91 c2 22 	lds	r24, 0x22C2	; 0x8022c2 <first12Bits.4609>
- 3d2:	82 95       	swap	r24
- 3d4:	80 7f       	andi	r24, 0xF0	; 240
+ 3e2:	80 91 c2 22 	lds	r24, 0x22C2	; 0x8022c2 <first12Bits.4609>
+ 3e6:	82 95       	swap	r24
+ 3e8:	80 7f       	andi	r24, 0xF0	; 240
 			MSB_filter_var = ((uint8_t) ( second12Bits >> 8 ))  & 0x0F;
 			c |= MSB_filter_var;
- 3d6:	2f 70       	andi	r18, 0x0F	; 15
- 3d8:	28 2b       	or	r18, r24
+ 3ea:	2f 70       	andi	r18, 0x0F	; 15
+ 3ec:	28 2b       	or	r18, r24
 			
 			break;
- 3da:	09 c0       	rjmp	.+18     	; 0x3ee <__vector_24+0x102>
+ 3ee:	09 c0       	rjmp	.+18     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
 				The MSB_filter_var eliminates these bits away.
 		*/
 			
 		case( 2 ):
 		
 			c = (uint8_t) second12Bits;
- 3dc:	20 91 c0 22 	lds	r18, 0x22C0	; 0x8022c0 <__data_end>
+ 3f0:	20 91 c0 22 	lds	r18, 0x22C0	; 0x8022c0 <__data_end>
 			_12bytesSent++;
- 3e0:	80 91 c4 22 	lds	r24, 0x22C4	; 0x8022c4 <_12bytesSent.4606>
- 3e4:	8f 5f       	subi	r24, 0xFF	; 255
- 3e6:	80 93 c4 22 	sts	0x22C4, r24	; 0x8022c4 <_12bytesSent.4606>
+ 3f4:	80 91 c4 22 	lds	r24, 0x22C4	; 0x8022c4 <_12bytesSent.4606>
+ 3f8:	8f 5f       	subi	r24, 0xFF	; 255
+ 3fa:	80 93 c4 22 	sts	0x22C4, r24	; 0x8022c4 <_12bytesSent.4606>
 			break;
- 3ea:	01 c0       	rjmp	.+2      	; 0x3ee <__vector_24+0x102>
+ 3fe:	01 c0       	rjmp	.+2      	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
 	static uint8_t		row				= 0;
 	
 	static uint16_t		first12Bits		= 0;
 	static uint16_t		second12Bits	= 0;
 	
 	uint8_t				c				= 0;
- 3ec:	20 e0       	ldi	r18, 0x00	; 0
+ 400:	20 e0       	ldi	r18, 0x00	; 0
 		break;
 		
 		
 		}
 		
 		SPIC.DATA = c;                  // send data
- 3ee:	20 93 c3 08 	sts	0x08C3, r18	; 0x8008c3 <__TEXT_REGION_LENGTH__+0x7008c3>
+ 402:	20 93 c3 08 	sts	0x08C3, r18	; 0x8008c3 <__TEXT_REGION_LENGTH__+0x7008c3>
 		_8bytesSent++;
- 3f2:	9f 5f       	subi	r25, 0xFF	; 255
- 3f4:	90 93 c6 22 	sts	0x22C6, r25	; 0x8022c6 <_8bytesSent.4607>
+ 406:	9f 5f       	subi	r25, 0xFF	; 255
+ 408:	90 93 c6 22 	sts	0x22C6, r25	; 0x8022c6 <_8bytesSent.4607>
 		
 		if ( _12bytesSent > 24  || _8bytesSent > 36 )					// if reached end
- 3f8:	80 91 c4 22 	lds	r24, 0x22C4	; 0x8022c4 <_12bytesSent.4606>
- 3fc:	89 31       	cpi	r24, 0x19	; 25
- 3fe:	10 f4       	brcc	.+4      	; 0x404 <__LOCK_REGION_LENGTH__+0x4>
- 400:	95 32       	cpi	r25, 0x25	; 37
- 402:	18 f1       	brcs	.+70     	; 0x44a <__LOCK_REGION_LENGTH__+0x4a>
+ 40c:	80 91 c4 22 	lds	r24, 0x22C4	; 0x8022c4 <_12bytesSent.4606>
+ 410:	89 31       	cpi	r24, 0x19	; 25
+ 412:	10 f4       	brcc	.+4      	; 0x418 <__LOCK_REGION_LENGTH__+0x18>
+ 414:	95 32       	cpi	r25, 0x25	; 37
+ 416:	18 f1       	brcs	.+70     	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
 		{
 			row++;
- 404:	c0 91 c5 22 	lds	r28, 0x22C5	; 0x8022c5 <row.4608>
- 408:	cf 5f       	subi	r28, 0xFF	; 255
- 40a:	c0 93 c5 22 	sts	0x22C5, r28	; 0x8022c5 <row.4608>
+ 418:	c0 91 c5 22 	lds	r28, 0x22C5	; 0x8022c5 <row.4608>
+ 41c:	cf 5f       	subi	r28, 0xFF	; 255
+ 41e:	c0 93 c5 22 	sts	0x22C5, r28	; 0x8022c5 <row.4608>
 			SPI_blankAndLatch();
- 40e:	0e 94 6d 01 	call	0x2da	; 0x2da <SPI_blankAndLatch>
+ 422:	0e 94 6d 01 	call	0x2da	; 0x2da <SPI_blankAndLatch>
 			
 			SPIC.INTCTRL	&=		~( ( 1 << 0 ) | ( 1 << 1 ) );		// turn off interrupts
- 412:	e0 ec       	ldi	r30, 0xC0	; 192
- 414:	f8 e0       	ldi	r31, 0x08	; 8
- 416:	81 81       	ldd	r24, Z+1	; 0x01
- 418:	8c 7f       	andi	r24, 0xFC	; 252
- 41a:	81 83       	std	Z+1, r24	; 0x01
+ 426:	e0 ec       	ldi	r30, 0xC0	; 192
+ 428:	f8 e0       	ldi	r31, 0x08	; 8
+ 42a:	81 81       	ldd	r24, Z+1	; 0x01
+ 42c:	8c 7f       	andi	r24, 0xFC	; 252
+ 42e:	81 83       	std	Z+1, r24	; 0x01
 			_12bytesSent	=		0;
- 41c:	10 92 c4 22 	sts	0x22C4, r1	; 0x8022c4 <_12bytesSent.4606>
+ 430:	10 92 c4 22 	sts	0x22C4, r1	; 0x8022c4 <_12bytesSent.4606>
 			_8bytesSent		=		0;
- 420:	10 92 c6 22 	sts	0x22C6, r1	; 0x8022c6 <_8bytesSent.4607>
+ 434:	10 92 c6 22 	sts	0x22C6, r1	; 0x8022c6 <_8bytesSent.4607>
 			
 			if(row > 8){
- 424:	c9 30       	cpi	r28, 0x09	; 9
- 426:	30 f0       	brcs	.+12     	; 0x434 <__LOCK_REGION_LENGTH__+0x34>
+ 438:	c9 30       	cpi	r28, 0x09	; 9
+ 43a:	30 f0       	brcs	.+12     	; 0x448 <__LOCK_REGION_LENGTH__+0x48>
 				row = 0;
- 428:	10 92 c5 22 	sts	0x22C5, r1	; 0x8022c5 <row.4608>
+ 43c:	10 92 c5 22 	sts	0x22C5, r1	; 0x8022c5 <row.4608>
 				PORTA.OUT = (1<<0);
- 42c:	81 e0       	ldi	r24, 0x01	; 1
- 42e:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
- 432:	0b c0       	rjmp	.+22     	; 0x44a <__LOCK_REGION_LENGTH__+0x4a>
+ 440:	81 e0       	ldi	r24, 0x01	; 1
+ 442:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
+ 446:	0b c0       	rjmp	.+22     	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
 			}
 			else if (row == 1) PORTA.OUT = (1<<0);
- 434:	c1 30       	cpi	r28, 0x01	; 1
- 436:	21 f4       	brne	.+8      	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
- 438:	81 e0       	ldi	r24, 0x01	; 1
- 43a:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
- 43e:	05 c0       	rjmp	.+10     	; 0x44a <__LOCK_REGION_LENGTH__+0x4a>
-			else {
-				PORTA.OUT= PORTA.OUT << 1;
- 440:	e0 e0       	ldi	r30, 0x00	; 0
- 442:	f6 e0       	ldi	r31, 0x06	; 6
- 444:	84 81       	ldd	r24, Z+4	; 0x04
- 446:	88 0f       	add	r24, r24
- 448:	84 83       	std	Z+4, r24	; 0x04
-				}
+ 448:	c1 30       	cpi	r28, 0x01	; 1
+ 44a:	21 f4       	brne	.+8      	; 0x454 <__LOCK_REGION_LENGTH__+0x54>
+ 44c:	81 e0       	ldi	r24, 0x01	; 1
+ 44e:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
+ 452:	05 c0       	rjmp	.+10     	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
+			else PORTA.OUT= PORTA.OUT << 1;
+ 454:	e0 e0       	ldi	r30, 0x00	; 0
+ 456:	f6 e0       	ldi	r31, 0x06	; 6
+ 458:	84 81       	ldd	r24, Z+4	; 0x04
+ 45a:	88 0f       	add	r24, r24
+ 45c:	84 83       	std	Z+4, r24	; 0x04
 			
 		}	
 }
- 44a:	ff 91       	pop	r31
- 44c:	ef 91       	pop	r30
- 44e:	cf 91       	pop	r28
- 450:	bf 91       	pop	r27
- 452:	af 91       	pop	r26
- 454:	9f 91       	pop	r25
- 456:	8f 91       	pop	r24
- 458:	7f 91       	pop	r23
- 45a:	6f 91       	pop	r22
- 45c:	5f 91       	pop	r21
- 45e:	4f 91       	pop	r20
- 460:	3f 91       	pop	r19
- 462:	2f 91       	pop	r18
- 464:	0f 90       	pop	r0
- 466:	0b be       	out	0x3b, r0	; 59
- 468:	0f 90       	pop	r0
- 46a:	0f be       	out	0x3f, r0	; 63
- 46c:	0f 90       	pop	r0
- 46e:	1f 90       	pop	r1
- 470:	18 95       	reti
+ 45e:	ff 91       	pop	r31
+ 460:	ef 91       	pop	r30
+ 462:	cf 91       	pop	r28
+ 464:	bf 91       	pop	r27
+ 466:	af 91       	pop	r26
+ 468:	9f 91       	pop	r25
+ 46a:	8f 91       	pop	r24
+ 46c:	7f 91       	pop	r23
+ 46e:	6f 91       	pop	r22
+ 470:	5f 91       	pop	r21
+ 472:	4f 91       	pop	r20
+ 474:	3f 91       	pop	r19
+ 476:	2f 91       	pop	r18
+ 478:	0f 90       	pop	r0
+ 47a:	0b be       	out	0x3b, r0	; 59
+ 47c:	0f 90       	pop	r0
+ 47e:	0f be       	out	0x3f, r0	; 63
+ 480:	0f 90       	pop	r0
+ 482:	1f 90       	pop	r1
+ 484:	18 95       	reti
 
-00000472 <Timer0_init>:
+00000486 <Timer0_init>:
 #include "SPI.h"
 
 uint8_t ranForFirstTime = 0;
 void Timer0_init(void)
 {
 	TCC0.CTRLA = 0b00000011; //PRESCALER CLK_DIV4
- 472:	e0 e0       	ldi	r30, 0x00	; 0
- 474:	f8 e0       	ldi	r31, 0x08	; 8
- 476:	83 e0       	ldi	r24, 0x03	; 3
- 478:	80 83       	st	Z, r24
+ 486:	e0 e0       	ldi	r30, 0x00	; 0
+ 488:	f8 e0       	ldi	r31, 0x08	; 8
+ 48a:	83 e0       	ldi	r24, 0x03	; 3
+ 48c:	80 83       	st	Z, r24
 	TCC0.INTCTRLA = 0b00000011; //Interrupt level HIGH
- 47a:	86 83       	std	Z+6, r24	; 0x06
+ 48e:	86 83       	std	Z+6, r24	; 0x06
 	TCC0.PER = 5000;
- 47c:	88 e8       	ldi	r24, 0x88	; 136
- 47e:	93 e1       	ldi	r25, 0x13	; 19
- 480:	86 a3       	std	Z+38, r24	; 0x26
- 482:	97 a3       	std	Z+39, r25	; 0x27
- 484:	08 95       	ret
+ 490:	88 e8       	ldi	r24, 0x88	; 136
+ 492:	93 e1       	ldi	r25, 0x13	; 19
+ 494:	86 a3       	std	Z+38, r24	; 0x26
+ 496:	97 a3       	std	Z+39, r25	; 0x27
+ 498:	08 95       	ret
 
-00000486 <__vector_14>:
+0000049a <__vector_14>:
 }
 /*		Timer 0 is used for the periodic update of the Display		*/
 
 ISR ( TCC0_OVF_vect )
 {
- 486:	1f 92       	push	r1
- 488:	0f 92       	push	r0
- 48a:	0f b6       	in	r0, 0x3f	; 63
- 48c:	0f 92       	push	r0
- 48e:	11 24       	eor	r1, r1
- 490:	0b b6       	in	r0, 0x3b	; 59
- 492:	0f 92       	push	r0
- 494:	2f 93       	push	r18
- 496:	3f 93       	push	r19
- 498:	4f 93       	push	r20
- 49a:	5f 93       	push	r21
- 49c:	6f 93       	push	r22
- 49e:	7f 93       	push	r23
- 4a0:	8f 93       	push	r24
- 4a2:	9f 93       	push	r25
- 4a4:	af 93       	push	r26
- 4a6:	bf 93       	push	r27
- 4a8:	ef 93       	push	r30
- 4aa:	ff 93       	push	r31
+ 49a:	1f 92       	push	r1
+ 49c:	0f 92       	push	r0
+ 49e:	0f b6       	in	r0, 0x3f	; 63
+ 4a0:	0f 92       	push	r0
+ 4a2:	11 24       	eor	r1, r1
+ 4a4:	0b b6       	in	r0, 0x3b	; 59
+ 4a6:	0f 92       	push	r0
+ 4a8:	2f 93       	push	r18
+ 4aa:	3f 93       	push	r19
+ 4ac:	4f 93       	push	r20
+ 4ae:	5f 93       	push	r21
+ 4b0:	6f 93       	push	r22
+ 4b2:	7f 93       	push	r23
+ 4b4:	8f 93       	push	r24
+ 4b6:	9f 93       	push	r25
+ 4b8:	af 93       	push	r26
+ 4ba:	bf 93       	push	r27
+ 4bc:	ef 93       	push	r30
+ 4be:	ff 93       	push	r31
 	SPI_update();
- 4ac:	0e 94 67 01 	call	0x2ce	; 0x2ce <SPI_update>
- 4b0:	ff 91       	pop	r31
- 4b2:	ef 91       	pop	r30
- 4b4:	bf 91       	pop	r27
- 4b6:	af 91       	pop	r26
- 4b8:	9f 91       	pop	r25
- 4ba:	8f 91       	pop	r24
- 4bc:	7f 91       	pop	r23
- 4be:	6f 91       	pop	r22
- 4c0:	5f 91       	pop	r21
- 4c2:	4f 91       	pop	r20
- 4c4:	3f 91       	pop	r19
- 4c6:	2f 91       	pop	r18
- 4c8:	0f 90       	pop	r0
- 4ca:	0b be       	out	0x3b, r0	; 59
- 4cc:	0f 90       	pop	r0
- 4ce:	0f be       	out	0x3f, r0	; 63
- 4d0:	0f 90       	pop	r0
- 4d2:	1f 90       	pop	r1
- 4d4:	18 95       	reti
+ 4c0:	0e 94 67 01 	call	0x2ce	; 0x2ce <SPI_update>
+ 4c4:	ff 91       	pop	r31
+ 4c6:	ef 91       	pop	r30
+ 4c8:	bf 91       	pop	r27
+ 4ca:	af 91       	pop	r26
+ 4cc:	9f 91       	pop	r25
+ 4ce:	8f 91       	pop	r24
+ 4d0:	7f 91       	pop	r23
+ 4d2:	6f 91       	pop	r22
+ 4d4:	5f 91       	pop	r21
+ 4d6:	4f 91       	pop	r20
+ 4d8:	3f 91       	pop	r19
+ 4da:	2f 91       	pop	r18
+ 4dc:	0f 90       	pop	r0
+ 4de:	0b be       	out	0x3b, r0	; 59
+ 4e0:	0f 90       	pop	r0
+ 4e2:	0f be       	out	0x3f, r0	; 63
+ 4e4:	0f 90       	pop	r0
+ 4e6:	1f 90       	pop	r1
+ 4e8:	18 95       	reti
 
-000004d6 <_exit>:
- 4d6:	f8 94       	cli
+000004ea <_exit>:
+ 4ea:	f8 94       	cli
 
-000004d8 <__stop_program>:
- 4d8:	ff cf       	rjmp	.-2      	; 0x4d8 <__stop_program>
+000004ec <__stop_program>:
+ 4ec:	ff cf       	rjmp	.-2      	; 0x4ec <__stop_program>
