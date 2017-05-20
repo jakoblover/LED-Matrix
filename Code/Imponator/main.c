@@ -16,6 +16,7 @@
 #include <util/delay.h>
 #include "SPI.h"
 #include "Timer.h"
+#include "Display.h"
 
 
 void clock_init(void);
@@ -36,10 +37,10 @@ int main(void)
 	sei(); //activate global interrupts
 	PMIC.CTRL |= 7; //all interrupt levels are enabled
 	
-
+	
 	while (1) 
     {
-		
+	
 		
 		
 	}
