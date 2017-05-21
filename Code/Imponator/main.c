@@ -6,6 +6,7 @@
  */ 
 
 #define F_CPU 32000000UL //change this
+#define _NOP() do { __asm__ __volatile__ ("nop"); } while (0)
 
 #include <avr/io.h>
 #include <avr/xmega.h>
@@ -40,8 +41,7 @@ int main(void)
 	
 	while (1) 
     {
-	
-		
+
 		
 	}
 }

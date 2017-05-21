@@ -3,31 +3,31 @@ Imponator.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000006f8  00000000  00000000  00000094  2**1
+  0 .text         000006fe  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         000000c0  00802000  000006f8  0000078c  2**0
+  1 .data         000000c0  00802000  000006fe  00000792  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000007  008020c0  008020c0  0000084c  2**0
+  2 .bss          00000007  008020c0  008020c0  00000852  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  0000084c  2**0
+  3 .comment      00000030  00000000  00000000  00000852  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000087c  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000884  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000b0  00000000  00000000  000008bc  2**0
+  5 .debug_aranges 000000b0  00000000  00000000  000008c4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000398b  00000000  00000000  0000096c  2**0
+  6 .debug_info   0000398b  00000000  00000000  00000974  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00002a16  00000000  00000000  000042f7  2**0
+  7 .debug_abbrev 00002a16  00000000  00000000  000042ff  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000961  00000000  00000000  00006d0d  2**0
+  8 .debug_line   0000097f  00000000  00000000  00006d15  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000180  00000000  00000000  00007670  2**2
+  9 .debug_frame  00000180  00000000  00000000  00007694  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000023fb  00000000  00000000  000077f0  2**0
+ 10 .debug_str    000023fb  00000000  00000000  00007814  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000002e6  00000000  00000000  00009beb  2**0
+ 11 .debug_loc    000002e6  00000000  00000000  00009c0f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000070  00000000  00000000  00009ed1  2**0
+ 12 .debug_ranges 00000070  00000000  00000000  00009ef5  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -47,7 +47,7 @@ Disassembly of section .text:
   2c:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   30:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   34:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
-  38:	0c 94 52 03 	jmp	0x6a4	; 0x6a4 <__vector_14>
+  38:	0c 94 55 03 	jmp	0x6aa	; 0x6aa <__vector_14>
   3c:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   40:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   44:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
@@ -57,7 +57,7 @@ Disassembly of section .text:
   54:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   58:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   5c:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
-  60:	0c 94 88 02 	jmp	0x510	; 0x510 <__vector_24>
+  60:	0c 94 8b 02 	jmp	0x516	; 0x516 <__vector_24>
   64:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   68:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
   6c:	0c 94 1d 02 	jmp	0x43a	; 0x43a <__bad_interrupt>
@@ -207,7 +207,7 @@ Disassembly of section .text:
  408:	10 e2       	ldi	r17, 0x20	; 32
  40a:	a0 e0       	ldi	r26, 0x00	; 0
  40c:	b0 e2       	ldi	r27, 0x20	; 32
- 40e:	e8 ef       	ldi	r30, 0xF8	; 248
+ 40e:	ee ef       	ldi	r30, 0xFE	; 254
  410:	f6 e0       	ldi	r31, 0x06	; 6
  412:	00 e0       	ldi	r16, 0x00	; 0
  414:	0b bf       	out	0x3b, r16	; 59
@@ -232,7 +232,7 @@ Disassembly of section .text:
  42e:	b2 07       	cpc	r27, r18
  430:	e1 f7       	brne	.-8      	; 0x42a <.do_clear_bss_loop>
  432:	0e 94 3f 02 	call	0x47e	; 0x47e <main>
- 436:	0c 94 7a 03 	jmp	0x6f4	; 0x6f4 <_exit>
+ 436:	0c 94 7d 03 	jmp	0x6fa	; 0x6fa <_exit>
 
 0000043a <__bad_interrupt>:
  43a:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -296,9 +296,9 @@ int main(void)
 	clock_init();
  47e:	0e 94 31 02 	call	0x462	; 0x462 <clock_init>
 	SPI_init();
- 482:	0e 94 53 02 	call	0x4a6	; 0x4a6 <SPI_init>
+ 482:	0e 94 56 02 	call	0x4ac	; 0x4ac <SPI_init>
 	Timer0_init();
- 486:	0e 94 48 03 	call	0x690	; 0x690 <Timer0_init>
+ 486:	0e 94 4b 03 	call	0x696	; 0x696 <Timer0_init>
 	
 	
 	
@@ -321,417 +321,427 @@ int main(void)
  49e:	82 81       	ldd	r24, Z+2	; 0x02
  4a0:	87 60       	ori	r24, 0x07	; 7
  4a2:	82 83       	std	Z+2, r24	; 0x02
- 4a4:	ff cf       	rjmp	.-2      	; 0x4a4 <main+0x26>
+	
+	
+	while (1) 
+    {
+		_NOP();
+ 4a4:	00 00       	nop
+		_NOP();
+ 4a6:	00 00       	nop
+		_NOP();
+ 4a8:	00 00       	nop
+ 4aa:	fc cf       	rjmp	.-8      	; 0x4a4 <main+0x26>
 
-000004a6 <SPI_init>:
+000004ac <SPI_init>:
 #include "Display.h"
 #include "ProgmemData.h"
 
 
 void SPI_init(void){
 	PORTC.DIRSET |= 1 << 0; //Latch pin for TLC5947
- 4a6:	e0 e4       	ldi	r30, 0x40	; 64
- 4a8:	f6 e0       	ldi	r31, 0x06	; 6
- 4aa:	81 81       	ldd	r24, Z+1	; 0x01
- 4ac:	81 60       	ori	r24, 0x01	; 1
- 4ae:	81 83       	std	Z+1, r24	; 0x01
-	PORTC.DIRSET |= 1 << 1; //BLANK pin for TLC5947
+ 4ac:	e0 e4       	ldi	r30, 0x40	; 64
+ 4ae:	f6 e0       	ldi	r31, 0x06	; 6
  4b0:	81 81       	ldd	r24, Z+1	; 0x01
- 4b2:	82 60       	ori	r24, 0x02	; 2
+ 4b2:	81 60       	ori	r24, 0x01	; 1
  4b4:	81 83       	std	Z+1, r24	; 0x01
-	PORTC.DIRSET |= 1 << 7; //SCK pin for TLC5947
+	PORTC.DIRSET |= 1 << 1; //BLANK pin for TLC5947
  4b6:	81 81       	ldd	r24, Z+1	; 0x01
- 4b8:	80 68       	ori	r24, 0x80	; 128
+ 4b8:	82 60       	ori	r24, 0x02	; 2
  4ba:	81 83       	std	Z+1, r24	; 0x01
-	PORTC.DIRSET |= 1 << 5; //MOSI pin for TLC5947
+	PORTC.DIRSET |= 1 << 7; //SCK pin for TLC5947
  4bc:	81 81       	ldd	r24, Z+1	; 0x01
- 4be:	80 62       	ori	r24, 0x20	; 32
+ 4be:	80 68       	ori	r24, 0x80	; 128
  4c0:	81 83       	std	Z+1, r24	; 0x01
+	PORTC.DIRSET |= 1 << 5; //MOSI pin for TLC5947
+ 4c2:	81 81       	ldd	r24, Z+1	; 0x01
+ 4c4:	80 62       	ori	r24, 0x20	; 32
+ 4c6:	81 83       	std	Z+1, r24	; 0x01
 
 
 	PORTC.PIN4CTRL |= PORT_OPC_PULLUP_gc;
- 4c2:	84 89       	ldd	r24, Z+20	; 0x14
- 4c4:	88 61       	ori	r24, 0x18	; 24
- 4c6:	84 8b       	std	Z+20, r24	; 0x14
+ 4c8:	84 89       	ldd	r24, Z+20	; 0x14
+ 4ca:	88 61       	ori	r24, 0x18	; 24
+ 4cc:	84 8b       	std	Z+20, r24	; 0x14
 	PORTC.DIRSET |= 1 << 4; //Slave select
- 4c8:	81 81       	ldd	r24, Z+1	; 0x01
- 4ca:	80 61       	ori	r24, 0x10	; 16
- 4cc:	81 83       	std	Z+1, r24	; 0x01
-	PORTC.OUTSET |= 1 << 4; //Slave select HIGH
- 4ce:	85 81       	ldd	r24, Z+5	; 0x05
+ 4ce:	81 81       	ldd	r24, Z+1	; 0x01
  4d0:	80 61       	ori	r24, 0x10	; 16
- 4d2:	85 83       	std	Z+5, r24	; 0x05
+ 4d2:	81 83       	std	Z+1, r24	; 0x01
+	PORTC.OUTSET |= 1 << 4; //Slave select HIGH
+ 4d4:	85 81       	ldd	r24, Z+5	; 0x05
+ 4d6:	80 61       	ori	r24, 0x10	; 16
+ 4d8:	85 83       	std	Z+5, r24	; 0x05
 	
 
 	SPIC.CTRL |= SPI_ENABLE_bm | SPI_MASTER_bm | SPI_MODE_0_gc | SPI_PRESCALER_DIV128_gc | SPI_CLK2X_bm;
- 4d4:	a0 ec       	ldi	r26, 0xC0	; 192
- 4d6:	b8 e0       	ldi	r27, 0x08	; 8
- 4d8:	8c 91       	ld	r24, X
- 4da:	83 6d       	ori	r24, 0xD3	; 211
- 4dc:	8c 93       	st	X, r24
+ 4da:	a0 ec       	ldi	r26, 0xC0	; 192
+ 4dc:	b8 e0       	ldi	r27, 0x08	; 8
+ 4de:	8c 91       	ld	r24, X
+ 4e0:	83 6d       	ori	r24, 0xD3	; 211
+ 4e2:	8c 93       	st	X, r24
 	SPIC.INTCTRL |= SPI_INTLVL_LO_gc;
- 4de:	11 96       	adiw	r26, 0x01	; 1
- 4e0:	8c 91       	ld	r24, X
- 4e2:	11 97       	sbiw	r26, 0x01	; 1
- 4e4:	81 60       	ori	r24, 0x01	; 1
- 4e6:	11 96       	adiw	r26, 0x01	; 1
- 4e8:	8c 93       	st	X, r24
+ 4e4:	11 96       	adiw	r26, 0x01	; 1
+ 4e6:	8c 91       	ld	r24, X
+ 4e8:	11 97       	sbiw	r26, 0x01	; 1
+ 4ea:	81 60       	ori	r24, 0x01	; 1
+ 4ec:	11 96       	adiw	r26, 0x01	; 1
+ 4ee:	8c 93       	st	X, r24
 	
 	PORTC.OUTCLR |= 1 << 0;
- 4ea:	86 81       	ldd	r24, Z+6	; 0x06
- 4ec:	81 60       	ori	r24, 0x01	; 1
- 4ee:	86 83       	std	Z+6, r24	; 0x06
- 4f0:	08 95       	ret
+ 4f0:	86 81       	ldd	r24, Z+6	; 0x06
+ 4f2:	81 60       	ori	r24, 0x01	; 1
+ 4f4:	86 83       	std	Z+6, r24	; 0x06
+ 4f6:	08 95       	ret
 
-000004f2 <SPI_update>:
+000004f8 <SPI_update>:
 }
 
 void SPI_update(void){
 	SPIC.INTCTRL |= SPI_INTLVL_MED_gc; // interrupt level for SPIC set to medium
- 4f2:	e0 ec       	ldi	r30, 0xC0	; 192
- 4f4:	f8 e0       	ldi	r31, 0x08	; 8
- 4f6:	81 81       	ldd	r24, Z+1	; 0x01
- 4f8:	82 60       	ori	r24, 0x02	; 2
- 4fa:	81 83       	std	Z+1, r24	; 0x01
- 4fc:	08 95       	ret
+ 4f8:	e0 ec       	ldi	r30, 0xC0	; 192
+ 4fa:	f8 e0       	ldi	r31, 0x08	; 8
+ 4fc:	81 81       	ldd	r24, Z+1	; 0x01
+ 4fe:	82 60       	ori	r24, 0x02	; 2
+ 500:	81 83       	std	Z+1, r24	; 0x01
+ 502:	08 95       	ret
 
-000004fe <SPI_blankAndLatch>:
+00000504 <SPI_blankAndLatch>:
 }
 
 void SPI_blankAndLatch(void){
 	PORTC.OUTSET |= 1 << 0 | 1<<1;
- 4fe:	e0 e4       	ldi	r30, 0x40	; 64
- 500:	f6 e0       	ldi	r31, 0x06	; 6
- 502:	85 81       	ldd	r24, Z+5	; 0x05
- 504:	83 60       	ori	r24, 0x03	; 3
- 506:	85 83       	std	Z+5, r24	; 0x05
-	PORTC.OUTCLR |= 1 << 0 | 1<<1;
- 508:	86 81       	ldd	r24, Z+6	; 0x06
+ 504:	e0 e4       	ldi	r30, 0x40	; 64
+ 506:	f6 e0       	ldi	r31, 0x06	; 6
+ 508:	85 81       	ldd	r24, Z+5	; 0x05
  50a:	83 60       	ori	r24, 0x03	; 3
- 50c:	86 83       	std	Z+6, r24	; 0x06
- 50e:	08 95       	ret
+ 50c:	85 83       	std	Z+5, r24	; 0x05
+	PORTC.OUTCLR |= 1 << 0 | 1<<1;
+ 50e:	86 81       	ldd	r24, Z+6	; 0x06
+ 510:	83 60       	ori	r24, 0x03	; 3
+ 512:	86 83       	std	Z+6, r24	; 0x06
+ 514:	08 95       	ret
 
-00000510 <__vector_24>:
+00000516 <__vector_24>:
 }
 
 ISR ( SPIC_INT_vect )
 {
- 510:	1f 92       	push	r1
- 512:	0f 92       	push	r0
- 514:	0f b6       	in	r0, 0x3f	; 63
- 516:	0f 92       	push	r0
- 518:	11 24       	eor	r1, r1
- 51a:	0b b6       	in	r0, 0x3b	; 59
+ 516:	1f 92       	push	r1
+ 518:	0f 92       	push	r0
+ 51a:	0f b6       	in	r0, 0x3f	; 63
  51c:	0f 92       	push	r0
- 51e:	2f 93       	push	r18
- 520:	3f 93       	push	r19
- 522:	4f 93       	push	r20
- 524:	5f 93       	push	r21
- 526:	6f 93       	push	r22
- 528:	7f 93       	push	r23
- 52a:	8f 93       	push	r24
- 52c:	9f 93       	push	r25
- 52e:	af 93       	push	r26
- 530:	bf 93       	push	r27
- 532:	ef 93       	push	r30
- 534:	ff 93       	push	r31
+ 51e:	11 24       	eor	r1, r1
+ 520:	0b b6       	in	r0, 0x3b	; 59
+ 522:	0f 92       	push	r0
+ 524:	2f 93       	push	r18
+ 526:	3f 93       	push	r19
+ 528:	4f 93       	push	r20
+ 52a:	5f 93       	push	r21
+ 52c:	6f 93       	push	r22
+ 52e:	7f 93       	push	r23
+ 530:	8f 93       	push	r24
+ 532:	9f 93       	push	r25
+ 534:	af 93       	push	r26
+ 536:	bf 93       	push	r27
+ 538:	ef 93       	push	r30
+ 53a:	ff 93       	push	r31
 	The data is sent in batches of two 12bits variables, divided into three 8bits variables. ( 12*2 == 8*3 )
 	The sending of the two 12bits variables are divided into three actions, each one choosing the appropriate bits
 	to put into the 8bit variable c, which is transmitted once the switch ends.
 */
 	
 	switch ( _8bytesSent % 3 )			
- 536:	90 91 c6 20 	lds	r25, 0x20C6	; 0x8020c6 <_8bytesSent.4613>
- 53a:	8b ea       	ldi	r24, 0xAB	; 171
- 53c:	98 9f       	mul	r25, r24
- 53e:	81 2d       	mov	r24, r1
- 540:	11 24       	eor	r1, r1
- 542:	86 95       	lsr	r24
- 544:	28 2f       	mov	r18, r24
- 546:	22 0f       	add	r18, r18
- 548:	82 0f       	add	r24, r18
- 54a:	98 1b       	sub	r25, r24
- 54c:	91 30       	cpi	r25, 0x01	; 1
- 54e:	19 f1       	breq	.+70     	; 0x596 <__vector_24+0x86>
- 550:	20 f0       	brcs	.+8      	; 0x55a <__vector_24+0x4a>
- 552:	92 30       	cpi	r25, 0x02	; 2
- 554:	09 f4       	brne	.+2      	; 0x558 <__vector_24+0x48>
- 556:	40 c0       	rjmp	.+128    	; 0x5d8 <__vector_24+0xc8>
- 558:	47 c0       	rjmp	.+142    	; 0x5e8 <__vector_24+0xd8>
+ 53c:	90 91 c6 20 	lds	r25, 0x20C6	; 0x8020c6 <_8bytesSent.4613>
+ 540:	8b ea       	ldi	r24, 0xAB	; 171
+ 542:	98 9f       	mul	r25, r24
+ 544:	81 2d       	mov	r24, r1
+ 546:	11 24       	eor	r1, r1
+ 548:	86 95       	lsr	r24
+ 54a:	28 2f       	mov	r18, r24
+ 54c:	22 0f       	add	r18, r18
+ 54e:	82 0f       	add	r24, r18
+ 550:	98 1b       	sub	r25, r24
+ 552:	91 30       	cpi	r25, 0x01	; 1
+ 554:	19 f1       	breq	.+70     	; 0x59c <__vector_24+0x86>
+ 556:	20 f0       	brcs	.+8      	; 0x560 <__vector_24+0x4a>
+ 558:	92 30       	cpi	r25, 0x02	; 2
+ 55a:	09 f4       	brne	.+2      	; 0x55e <__vector_24+0x48>
+ 55c:	40 c0       	rjmp	.+128    	; 0x5de <__vector_24+0xc8>
+ 55e:	47 c0       	rjmp	.+142    	; 0x5ee <__vector_24+0xd8>
 	{
 		case ( 0 ):
 			first12Bits = pgm_read_word(  & (  BrightnessLookUpTable[Display_getChannelBrightness(row,23-_12bytesSent)] ) );
- 55a:	80 91 c5 20 	lds	r24, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
- 55e:	67 e1       	ldi	r22, 0x17	; 23
- 560:	70 e0       	ldi	r23, 0x00	; 0
- 562:	68 1b       	sub	r22, r24
- 564:	71 09       	sbc	r23, r1
- 566:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
- 56a:	90 e0       	ldi	r25, 0x00	; 0
- 56c:	0e 94 1f 02 	call	0x43e	; 0x43e <Display_getChannelBrightness>
- 570:	e8 2f       	mov	r30, r24
- 572:	f0 e0       	ldi	r31, 0x00	; 0
- 574:	ee 0f       	add	r30, r30
- 576:	ff 1f       	adc	r31, r31
- 578:	e4 50       	subi	r30, 0x04	; 4
- 57a:	fe 4f       	sbci	r31, 0xFE	; 254
- 57c:	85 91       	lpm	r24, Z+
- 57e:	94 91       	lpm	r25, Z
- 580:	80 93 c2 20 	sts	0x20C2, r24	; 0x8020c2 <first12Bits.4615>
- 584:	90 93 c3 20 	sts	0x20C3, r25	; 0x8020c3 <first12Bits.4615+0x1>
+ 560:	80 91 c5 20 	lds	r24, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
+ 564:	67 e1       	ldi	r22, 0x17	; 23
+ 566:	70 e0       	ldi	r23, 0x00	; 0
+ 568:	68 1b       	sub	r22, r24
+ 56a:	71 09       	sbc	r23, r1
+ 56c:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
+ 570:	90 e0       	ldi	r25, 0x00	; 0
+ 572:	0e 94 1f 02 	call	0x43e	; 0x43e <Display_getChannelBrightness>
+ 576:	e8 2f       	mov	r30, r24
+ 578:	f0 e0       	ldi	r31, 0x00	; 0
+ 57a:	ee 0f       	add	r30, r30
+ 57c:	ff 1f       	adc	r31, r31
+ 57e:	e4 50       	subi	r30, 0x04	; 4
+ 580:	fe 4f       	sbci	r31, 0xFE	; 254
+ 582:	85 91       	lpm	r24, Z+
+ 584:	94 91       	lpm	r25, Z
+ 586:	80 93 c2 20 	sts	0x20C2, r24	; 0x8020c2 <first12Bits.4615>
+ 58a:	90 93 c3 20 	sts	0x20C3, r25	; 0x8020c3 <first12Bits.4615+0x1>
 			c = ( uint8_t ) (first12Bits >> 4);
- 588:	92 95       	swap	r25
- 58a:	82 95       	swap	r24
- 58c:	8f 70       	andi	r24, 0x0F	; 15
- 58e:	89 27       	eor	r24, r25
- 590:	9f 70       	andi	r25, 0x0F	; 15
- 592:	89 27       	eor	r24, r25
+ 58e:	92 95       	swap	r25
+ 590:	82 95       	swap	r24
+ 592:	8f 70       	andi	r24, 0x0F	; 15
+ 594:	89 27       	eor	r24, r25
+ 596:	9f 70       	andi	r25, 0x0F	; 15
+ 598:	89 27       	eor	r24, r25
 			
 			break;
- 594:	2a c0       	rjmp	.+84     	; 0x5ea <__vector_24+0xda>
+ 59a:	2a c0       	rjmp	.+84     	; 0x5f0 <__vector_24+0xda>
 
 		case( 1 ):
 			++_12bytesSent;
- 596:	80 91 c5 20 	lds	r24, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
- 59a:	8f 5f       	subi	r24, 0xFF	; 255
- 59c:	80 93 c5 20 	sts	0x20C5, r24	; 0x8020c5 <_12bytesSent.4612>
+ 59c:	80 91 c5 20 	lds	r24, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
+ 5a0:	8f 5f       	subi	r24, 0xFF	; 255
+ 5a2:	80 93 c5 20 	sts	0x20C5, r24	; 0x8020c5 <_12bytesSent.4612>
 			second12Bits = pgm_read_word(  & (   BrightnessLookUpTable[Display_getChannelBrightness(row,23-_12bytesSent)]) );
- 5a0:	67 e1       	ldi	r22, 0x17	; 23
- 5a2:	70 e0       	ldi	r23, 0x00	; 0
- 5a4:	68 1b       	sub	r22, r24
- 5a6:	71 09       	sbc	r23, r1
- 5a8:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
- 5ac:	90 e0       	ldi	r25, 0x00	; 0
- 5ae:	0e 94 1f 02 	call	0x43e	; 0x43e <Display_getChannelBrightness>
- 5b2:	e8 2f       	mov	r30, r24
- 5b4:	f0 e0       	ldi	r31, 0x00	; 0
- 5b6:	ee 0f       	add	r30, r30
- 5b8:	ff 1f       	adc	r31, r31
- 5ba:	e4 50       	subi	r30, 0x04	; 4
- 5bc:	fe 4f       	sbci	r31, 0xFE	; 254
- 5be:	85 91       	lpm	r24, Z+
- 5c0:	94 91       	lpm	r25, Z
- 5c2:	80 93 c0 20 	sts	0x20C0, r24	; 0x8020c0 <__data_end>
- 5c6:	90 93 c1 20 	sts	0x20C1, r25	; 0x8020c1 <__data_end+0x1>
+ 5a6:	67 e1       	ldi	r22, 0x17	; 23
+ 5a8:	70 e0       	ldi	r23, 0x00	; 0
+ 5aa:	68 1b       	sub	r22, r24
+ 5ac:	71 09       	sbc	r23, r1
+ 5ae:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
+ 5b2:	90 e0       	ldi	r25, 0x00	; 0
+ 5b4:	0e 94 1f 02 	call	0x43e	; 0x43e <Display_getChannelBrightness>
+ 5b8:	e8 2f       	mov	r30, r24
+ 5ba:	f0 e0       	ldi	r31, 0x00	; 0
+ 5bc:	ee 0f       	add	r30, r30
+ 5be:	ff 1f       	adc	r31, r31
+ 5c0:	e4 50       	subi	r30, 0x04	; 4
+ 5c2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 5c4:	85 91       	lpm	r24, Z+
+ 5c6:	94 91       	lpm	r25, Z
+ 5c8:	80 93 c0 20 	sts	0x20C0, r24	; 0x8020c0 <__data_end>
+ 5cc:	90 93 c1 20 	sts	0x20C1, r25	; 0x8020c1 <__data_end+0x1>
 			c = (uint8_t) ( first12Bits << 4 );
- 5ca:	80 91 c2 20 	lds	r24, 0x20C2	; 0x8020c2 <first12Bits.4615>
- 5ce:	82 95       	swap	r24
- 5d0:	80 7f       	andi	r24, 0xF0	; 240
+ 5d0:	80 91 c2 20 	lds	r24, 0x20C2	; 0x8020c2 <first12Bits.4615>
+ 5d4:	82 95       	swap	r24
+ 5d6:	80 7f       	andi	r24, 0xF0	; 240
 			MSB_filter_var = ((uint8_t) ( second12Bits >> 8 ))  & 0x0F;
 			c |= MSB_filter_var;
- 5d2:	9f 70       	andi	r25, 0x0F	; 15
- 5d4:	89 2b       	or	r24, r25
+ 5d8:	9f 70       	andi	r25, 0x0F	; 15
+ 5da:	89 2b       	or	r24, r25
 
 			break;
- 5d6:	09 c0       	rjmp	.+18     	; 0x5ea <__vector_24+0xda>
+ 5dc:	09 c0       	rjmp	.+18     	; 0x5f0 <__vector_24+0xda>
 			
 		case( 2 ):
 		
 			c = (uint8_t) second12Bits;
- 5d8:	80 91 c0 20 	lds	r24, 0x20C0	; 0x8020c0 <__data_end>
+ 5de:	80 91 c0 20 	lds	r24, 0x20C0	; 0x8020c0 <__data_end>
 			_12bytesSent++;
- 5dc:	90 91 c5 20 	lds	r25, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
- 5e0:	9f 5f       	subi	r25, 0xFF	; 255
- 5e2:	90 93 c5 20 	sts	0x20C5, r25	; 0x8020c5 <_12bytesSent.4612>
+ 5e2:	90 91 c5 20 	lds	r25, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
+ 5e6:	9f 5f       	subi	r25, 0xFF	; 255
+ 5e8:	90 93 c5 20 	sts	0x20C5, r25	; 0x8020c5 <_12bytesSent.4612>
 			break;	
- 5e6:	01 c0       	rjmp	.+2      	; 0x5ea <__vector_24+0xda>
+ 5ec:	01 c0       	rjmp	.+2      	; 0x5f0 <__vector_24+0xda>
 	static uint8_t		row				= 0;
 	
 	static uint16_t		first12Bits		= 0;
 	static uint16_t		second12Bits	= 0;
 	
 	uint8_t				c				= 0;
- 5e8:	80 e0       	ldi	r24, 0x00	; 0
+ 5ee:	80 e0       	ldi	r24, 0x00	; 0
 		break;
 		
 		
 		}
 		
 		SPIC.DATA = c;                  // send data
- 5ea:	80 93 c3 08 	sts	0x08C3, r24	; 0x8008c3 <__TEXT_REGION_LENGTH__+0x7008c3>
+ 5f0:	80 93 c3 08 	sts	0x08C3, r24	; 0x8008c3 <__TEXT_REGION_LENGTH__+0x7008c3>
 		_8bytesSent++;
- 5ee:	80 91 c6 20 	lds	r24, 0x20C6	; 0x8020c6 <_8bytesSent.4613>
- 5f2:	8f 5f       	subi	r24, 0xFF	; 255
- 5f4:	80 93 c6 20 	sts	0x20C6, r24	; 0x8020c6 <_8bytesSent.4613>
+ 5f4:	80 91 c6 20 	lds	r24, 0x20C6	; 0x8020c6 <_8bytesSent.4613>
+ 5f8:	8f 5f       	subi	r24, 0xFF	; 255
+ 5fa:	80 93 c6 20 	sts	0x20C6, r24	; 0x8020c6 <_8bytesSent.4613>
 		
 		if ( _12bytesSent >= 24  || _8bytesSent >= 36 )					// if reached end
- 5f8:	90 91 c5 20 	lds	r25, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
- 5fc:	98 31       	cpi	r25, 0x18	; 24
- 5fe:	10 f4       	brcc	.+4      	; 0x604 <__vector_24+0xf4>
- 600:	84 32       	cpi	r24, 0x24	; 36
- 602:	98 f1       	brcs	.+102    	; 0x66a <__vector_24+0x15a>
+ 5fe:	90 91 c5 20 	lds	r25, 0x20C5	; 0x8020c5 <_12bytesSent.4612>
+ 602:	98 31       	cpi	r25, 0x18	; 24
+ 604:	10 f4       	brcc	.+4      	; 0x60a <__vector_24+0xf4>
+ 606:	84 32       	cpi	r24, 0x24	; 36
+ 608:	98 f1       	brcs	.+102    	; 0x670 <__vector_24+0x15a>
 		{
 			while(!(SPIC_STATUS & SPI_IF_bm)){}
- 604:	e2 ec       	ldi	r30, 0xC2	; 194
- 606:	f8 e0       	ldi	r31, 0x08	; 8
- 608:	80 81       	ld	r24, Z
- 60a:	88 23       	and	r24, r24
- 60c:	ec f7       	brge	.-6      	; 0x608 <__vector_24+0xf8>
+ 60a:	e2 ec       	ldi	r30, 0xC2	; 194
+ 60c:	f8 e0       	ldi	r31, 0x08	; 8
+ 60e:	80 81       	ld	r24, Z
+ 610:	88 23       	and	r24, r24
+ 612:	ec f7       	brge	.-6      	; 0x60e <__vector_24+0xf8>
 			SPI_blankAndLatch();
- 60e:	0e 94 7f 02 	call	0x4fe	; 0x4fe <SPI_blankAndLatch>
+ 614:	0e 94 82 02 	call	0x504	; 0x504 <SPI_blankAndLatch>
 			
 			SPIC.INTCTRL	&=		~( ( 1 << 0 ) | ( 1 << 1 ) );		// turn off interrupts
- 612:	e0 ec       	ldi	r30, 0xC0	; 192
- 614:	f8 e0       	ldi	r31, 0x08	; 8
- 616:	81 81       	ldd	r24, Z+1	; 0x01
- 618:	8c 7f       	andi	r24, 0xFC	; 252
- 61a:	81 83       	std	Z+1, r24	; 0x01
+ 618:	e0 ec       	ldi	r30, 0xC0	; 192
+ 61a:	f8 e0       	ldi	r31, 0x08	; 8
+ 61c:	81 81       	ldd	r24, Z+1	; 0x01
+ 61e:	8c 7f       	andi	r24, 0xFC	; 252
+ 620:	81 83       	std	Z+1, r24	; 0x01
 			_12bytesSent	=		0;
- 61c:	10 92 c5 20 	sts	0x20C5, r1	; 0x8020c5 <_12bytesSent.4612>
+ 622:	10 92 c5 20 	sts	0x20C5, r1	; 0x8020c5 <_12bytesSent.4612>
 			_8bytesSent		=		0;
- 620:	10 92 c6 20 	sts	0x20C6, r1	; 0x8020c6 <_8bytesSent.4613>
+ 626:	10 92 c6 20 	sts	0x20C6, r1	; 0x8020c6 <_8bytesSent.4613>
 			
 			if(row > 7){
- 624:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
- 628:	88 30       	cpi	r24, 0x08	; 8
- 62a:	30 f0       	brcs	.+12     	; 0x638 <__vector_24+0x128>
+ 62a:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
+ 62e:	88 30       	cpi	r24, 0x08	; 8
+ 630:	30 f0       	brcs	.+12     	; 0x63e <__vector_24+0x128>
 				row = 0;
- 62c:	10 92 c4 20 	sts	0x20C4, r1	; 0x8020c4 <row.4614>
+ 632:	10 92 c4 20 	sts	0x20C4, r1	; 0x8020c4 <row.4614>
 				PORTA.OUT = (1<<0);
- 630:	81 e0       	ldi	r24, 0x01	; 1
- 632:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
- 636:	14 c0       	rjmp	.+40     	; 0x660 <__vector_24+0x150>
+ 636:	81 e0       	ldi	r24, 0x01	; 1
+ 638:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
+ 63c:	14 c0       	rjmp	.+40     	; 0x666 <__vector_24+0x150>
 			}
 			else if (row == 0) PORTA.OUT = (1<<0);
- 638:	81 11       	cpse	r24, r1
- 63a:	04 c0       	rjmp	.+8      	; 0x644 <__vector_24+0x134>
- 63c:	81 e0       	ldi	r24, 0x01	; 1
- 63e:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
- 642:	0e c0       	rjmp	.+28     	; 0x660 <__vector_24+0x150>
+ 63e:	81 11       	cpse	r24, r1
+ 640:	04 c0       	rjmp	.+8      	; 0x64a <__vector_24+0x134>
+ 642:	81 e0       	ldi	r24, 0x01	; 1
+ 644:	80 93 04 06 	sts	0x0604, r24	; 0x800604 <__TEXT_REGION_LENGTH__+0x700604>
+ 648:	0e c0       	rjmp	.+28     	; 0x666 <__vector_24+0x150>
 			else PORTA.OUT= PORTA.OUT << 1;
- 644:	e0 e0       	ldi	r30, 0x00	; 0
- 646:	f6 e0       	ldi	r31, 0x06	; 6
- 648:	94 81       	ldd	r25, Z+4	; 0x04
- 64a:	99 0f       	add	r25, r25
- 64c:	94 83       	std	Z+4, r25	; 0x04
+ 64a:	e0 e0       	ldi	r30, 0x00	; 0
+ 64c:	f6 e0       	ldi	r31, 0x06	; 6
+ 64e:	94 81       	ldd	r25, Z+4	; 0x04
+ 650:	99 0f       	add	r25, r25
+ 652:	94 83       	std	Z+4, r25	; 0x04
 				break;
 				case(7):
 				PORTA.OUT = 0b10000000;
 				break;
 			}*/
 			row++;
- 64e:	8f 5f       	subi	r24, 0xFF	; 255
+ 654:	8f 5f       	subi	r24, 0xFF	; 255
 			if(row == 8)
- 650:	88 30       	cpi	r24, 0x08	; 8
- 652:	19 f0       	breq	.+6      	; 0x65a <__vector_24+0x14a>
+ 656:	88 30       	cpi	r24, 0x08	; 8
+ 658:	19 f0       	breq	.+6      	; 0x660 <__vector_24+0x14a>
 				break;
 				case(7):
 				PORTA.OUT = 0b10000000;
 				break;
 			}*/
 			row++;
- 654:	80 93 c4 20 	sts	0x20C4, r24	; 0x8020c4 <row.4614>
- 658:	08 c0       	rjmp	.+16     	; 0x66a <__vector_24+0x15a>
+ 65a:	80 93 c4 20 	sts	0x20C4, r24	; 0x8020c4 <row.4614>
+ 65e:	08 c0       	rjmp	.+16     	; 0x670 <__vector_24+0x15a>
 			if(row == 8)
 				row = 0;
- 65a:	10 92 c4 20 	sts	0x20C4, r1	; 0x8020c4 <row.4614>
+ 660:	10 92 c4 20 	sts	0x20C4, r1	; 0x8020c4 <row.4614>
 			
 		}	
 }
- 65e:	05 c0       	rjmp	.+10     	; 0x66a <__vector_24+0x15a>
+ 664:	05 c0       	rjmp	.+10     	; 0x670 <__vector_24+0x15a>
 				break;
 				case(7):
 				PORTA.OUT = 0b10000000;
 				break;
 			}*/
 			row++;
- 660:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
- 664:	8f 5f       	subi	r24, 0xFF	; 255
- 666:	80 93 c4 20 	sts	0x20C4, r24	; 0x8020c4 <row.4614>
+ 666:	80 91 c4 20 	lds	r24, 0x20C4	; 0x8020c4 <row.4614>
+ 66a:	8f 5f       	subi	r24, 0xFF	; 255
+ 66c:	80 93 c4 20 	sts	0x20C4, r24	; 0x8020c4 <row.4614>
 			if(row == 8)
 				row = 0;
 			
 		}	
 }
- 66a:	ff 91       	pop	r31
- 66c:	ef 91       	pop	r30
- 66e:	bf 91       	pop	r27
- 670:	af 91       	pop	r26
- 672:	9f 91       	pop	r25
- 674:	8f 91       	pop	r24
- 676:	7f 91       	pop	r23
- 678:	6f 91       	pop	r22
- 67a:	5f 91       	pop	r21
- 67c:	4f 91       	pop	r20
- 67e:	3f 91       	pop	r19
- 680:	2f 91       	pop	r18
- 682:	0f 90       	pop	r0
- 684:	0b be       	out	0x3b, r0	; 59
- 686:	0f 90       	pop	r0
- 688:	0f be       	out	0x3f, r0	; 63
- 68a:	0f 90       	pop	r0
- 68c:	1f 90       	pop	r1
- 68e:	18 95       	reti
+ 670:	ff 91       	pop	r31
+ 672:	ef 91       	pop	r30
+ 674:	bf 91       	pop	r27
+ 676:	af 91       	pop	r26
+ 678:	9f 91       	pop	r25
+ 67a:	8f 91       	pop	r24
+ 67c:	7f 91       	pop	r23
+ 67e:	6f 91       	pop	r22
+ 680:	5f 91       	pop	r21
+ 682:	4f 91       	pop	r20
+ 684:	3f 91       	pop	r19
+ 686:	2f 91       	pop	r18
+ 688:	0f 90       	pop	r0
+ 68a:	0b be       	out	0x3b, r0	; 59
+ 68c:	0f 90       	pop	r0
+ 68e:	0f be       	out	0x3f, r0	; 63
+ 690:	0f 90       	pop	r0
+ 692:	1f 90       	pop	r1
+ 694:	18 95       	reti
 
-00000690 <Timer0_init>:
+00000696 <Timer0_init>:
 #include "Timer.h"
 #include "SPI.h"
 
 void Timer0_init(void)
 {
 	TCC0.CTRLA = 0b00000011; //PRESCALER CLK_DIV4
- 690:	e0 e0       	ldi	r30, 0x00	; 0
- 692:	f8 e0       	ldi	r31, 0x08	; 8
- 694:	83 e0       	ldi	r24, 0x03	; 3
- 696:	80 83       	st	Z, r24
+ 696:	e0 e0       	ldi	r30, 0x00	; 0
+ 698:	f8 e0       	ldi	r31, 0x08	; 8
+ 69a:	83 e0       	ldi	r24, 0x03	; 3
+ 69c:	80 83       	st	Z, r24
 	TCC0.INTCTRLA = 0b00000011; //Interrupt level HIGH
- 698:	86 83       	std	Z+6, r24	; 0x06
-	TCC0.PER = 5000;
- 69a:	88 e8       	ldi	r24, 0x88	; 136
- 69c:	93 e1       	ldi	r25, 0x13	; 19
- 69e:	86 a3       	std	Z+38, r24	; 0x26
- 6a0:	97 a3       	std	Z+39, r25	; 0x27
- 6a2:	08 95       	ret
+ 69e:	86 83       	std	Z+6, r24	; 0x06
+	TCC0.PER = 15000;
+ 6a0:	88 e9       	ldi	r24, 0x98	; 152
+ 6a2:	9a e3       	ldi	r25, 0x3A	; 58
+ 6a4:	86 a3       	std	Z+38, r24	; 0x26
+ 6a6:	97 a3       	std	Z+39, r25	; 0x27
+ 6a8:	08 95       	ret
 
-000006a4 <__vector_14>:
+000006aa <__vector_14>:
 }
 /*		Timer 0 is used for the periodic update of the Display		*/
 
 ISR ( TCC0_OVF_vect )
 {
- 6a4:	1f 92       	push	r1
- 6a6:	0f 92       	push	r0
- 6a8:	0f b6       	in	r0, 0x3f	; 63
- 6aa:	0f 92       	push	r0
- 6ac:	11 24       	eor	r1, r1
- 6ae:	0b b6       	in	r0, 0x3b	; 59
+ 6aa:	1f 92       	push	r1
+ 6ac:	0f 92       	push	r0
+ 6ae:	0f b6       	in	r0, 0x3f	; 63
  6b0:	0f 92       	push	r0
- 6b2:	2f 93       	push	r18
- 6b4:	3f 93       	push	r19
- 6b6:	4f 93       	push	r20
- 6b8:	5f 93       	push	r21
- 6ba:	6f 93       	push	r22
- 6bc:	7f 93       	push	r23
- 6be:	8f 93       	push	r24
- 6c0:	9f 93       	push	r25
- 6c2:	af 93       	push	r26
- 6c4:	bf 93       	push	r27
- 6c6:	ef 93       	push	r30
- 6c8:	ff 93       	push	r31
+ 6b2:	11 24       	eor	r1, r1
+ 6b4:	0b b6       	in	r0, 0x3b	; 59
+ 6b6:	0f 92       	push	r0
+ 6b8:	2f 93       	push	r18
+ 6ba:	3f 93       	push	r19
+ 6bc:	4f 93       	push	r20
+ 6be:	5f 93       	push	r21
+ 6c0:	6f 93       	push	r22
+ 6c2:	7f 93       	push	r23
+ 6c4:	8f 93       	push	r24
+ 6c6:	9f 93       	push	r25
+ 6c8:	af 93       	push	r26
+ 6ca:	bf 93       	push	r27
+ 6cc:	ef 93       	push	r30
+ 6ce:	ff 93       	push	r31
 	SPI_update();
- 6ca:	0e 94 79 02 	call	0x4f2	; 0x4f2 <SPI_update>
- 6ce:	ff 91       	pop	r31
- 6d0:	ef 91       	pop	r30
- 6d2:	bf 91       	pop	r27
- 6d4:	af 91       	pop	r26
- 6d6:	9f 91       	pop	r25
- 6d8:	8f 91       	pop	r24
- 6da:	7f 91       	pop	r23
- 6dc:	6f 91       	pop	r22
- 6de:	5f 91       	pop	r21
- 6e0:	4f 91       	pop	r20
- 6e2:	3f 91       	pop	r19
- 6e4:	2f 91       	pop	r18
- 6e6:	0f 90       	pop	r0
- 6e8:	0b be       	out	0x3b, r0	; 59
- 6ea:	0f 90       	pop	r0
- 6ec:	0f be       	out	0x3f, r0	; 63
- 6ee:	0f 90       	pop	r0
- 6f0:	1f 90       	pop	r1
- 6f2:	18 95       	reti
+ 6d0:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <SPI_update>
+ 6d4:	ff 91       	pop	r31
+ 6d6:	ef 91       	pop	r30
+ 6d8:	bf 91       	pop	r27
+ 6da:	af 91       	pop	r26
+ 6dc:	9f 91       	pop	r25
+ 6de:	8f 91       	pop	r24
+ 6e0:	7f 91       	pop	r23
+ 6e2:	6f 91       	pop	r22
+ 6e4:	5f 91       	pop	r21
+ 6e6:	4f 91       	pop	r20
+ 6e8:	3f 91       	pop	r19
+ 6ea:	2f 91       	pop	r18
+ 6ec:	0f 90       	pop	r0
+ 6ee:	0b be       	out	0x3b, r0	; 59
+ 6f0:	0f 90       	pop	r0
+ 6f2:	0f be       	out	0x3f, r0	; 63
+ 6f4:	0f 90       	pop	r0
+ 6f6:	1f 90       	pop	r1
+ 6f8:	18 95       	reti
 
-000006f4 <_exit>:
- 6f4:	f8 94       	cli
+000006fa <_exit>:
+ 6fa:	f8 94       	cli
 
-000006f6 <__stop_program>:
- 6f6:	ff cf       	rjmp	.-2      	; 0x6f6 <__stop_program>
+000006fc <__stop_program>:
+ 6fc:	ff cf       	rjmp	.-2      	; 0x6fc <__stop_program>

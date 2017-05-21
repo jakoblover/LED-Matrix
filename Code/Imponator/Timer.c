@@ -18,7 +18,7 @@ void Timer0_init(void)
 {
 	TCC0.CTRLA = 0b00000011; //PRESCALER CLK_DIV4
 	TCC0.INTCTRLA = 0b00000011; //Interrupt level HIGH
-	TCC0.PER = 5000;
+	TCC0.PER = 15000;
 }
 /*		Timer 0 is used for the periodic update of the Display		*/
 
