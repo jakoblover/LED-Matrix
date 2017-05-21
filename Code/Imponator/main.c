@@ -18,6 +18,7 @@
 #include "SPI.h"
 #include "Timer.h"
 #include "Display.h"
+#include "Print.h"
 
 
 void clock_init(void);
@@ -27,7 +28,7 @@ int main(void)
 	clock_init();
 	SPI_init();
 	Timer0_init();
-	
+	Timer1_init();
 	
 	
 	
@@ -38,6 +39,9 @@ int main(void)
 	sei(); //activate global interrupts
 	PMIC.CTRL |= 7; //all interrupt levels are enabled
 	
+	_delay_ms(1000);
+	
+	Print_character();
 	
 	while (1) 
     {

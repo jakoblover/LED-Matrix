@@ -135,5 +135,8 @@ ISR ( SPIC_INT_vect )
 			if(row == 8)
 				row = 0;
 			
+			Display_clear();
+			Print_outputBuffer();
+			
 		}	
 }

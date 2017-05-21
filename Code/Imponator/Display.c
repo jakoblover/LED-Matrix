@@ -26,12 +26,20 @@ uint8_t DisplayData[8][24] =
 };
 
 
-void Display_setChannelBrightness(int row, int channel, uint8_t brightness){
+void Display_setChannelBrightness(uint8_t row, uint8_t channel, uint8_t brightness){
 	DisplayData[row][channel] = brightness;
 }
 
-uint8_t Display_getChannelBrightness(int row, int channel){
+uint8_t Display_getChannelBrightness(uint8_t row, uint8_t channel){
 	return DisplayData[row][channel];
+}
+
+void Display_clear(void){
+	for(uint8_t i = 0; i < 8; ++i){
+		for(uint8_t j = 0; j < 24; ++j){
+			DisplayData[i][j] = 0;
+		}
+	}
 }
 
 

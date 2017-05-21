@@ -12,8 +12,9 @@
 #define DISP_ROWS 8
 #define DISP_CHANNELS 24
 
-void Display_setChannelBrightness(int row, int channel, uint8_t brightness);
-uint8_t Display_getChannelBrightness(int row, int channel);
+void Display_setChannelBrightness(uint8_t row, uint8_t channel, uint8_t brightness);
+uint8_t Display_getChannelBrightness(uint8_t row, uint8_t channel);
+void Display_clear(void);
 
 
 

@@ -29,5 +29,7 @@ const uint16_t BrightnessLookUpTable[256] PROGMEM =
 	3969,4000,4032,4064,4095,4095
 };
 
+const char CharacterOmega[] PROGMEM = {0x9C,0xA2,0xC1,0x01,0x01,0xC1,0xA2,0x9C,0x00,0x00,0x00,0x00};
+
 
 #endif /* PROGMEMDATA_H_ */
