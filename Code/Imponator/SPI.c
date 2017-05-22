@@ -35,7 +35,7 @@ void SPI_update(void){
 
 void SPI_blankAndLatch(void){
 	PORTC.OUTSET |= 1 << 0 | 1<<1;
-	PORTC.OUTCLR |= 1 << 0 | 1<<1;
+	PORTC.OUTCLR |= 1 << 0;
 }
 
 ISR ( SPIC_INT_vect )
@@ -134,9 +134,6 @@ ISR ( SPIC_INT_vect )
 			row++;
 			if(row == 8)
 				row = 0;
-			
-			Display_clear();
-			Print_outputBuffer();
-			
+			PORTC.OUTCLR |= 1<<1;	
 		}	
 }

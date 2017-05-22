@@ -43,6 +43,7 @@ int main(void)
 	
 	Print_character();
 	
+	
 	while (1) 
     {
 

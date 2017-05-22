@@ -2,7 +2,7 @@
 #include "Display.h"
 
 volatile uint8_t	print_CharacterBlueVal	=	0	;
-volatile uint8_t	print_CharacterGreenVal	=	200	;
+volatile uint8_t	print_CharacterGreenVal	=	255	;
 volatile uint8_t	print_CharacterRedVal	=	0	;
 volatile uint8_t	print_CharacterChangeCounter = 0;
 
@@ -18,6 +18,23 @@ void Print_emptyBuffer(void)
 {
 	for ( uint8_t i = 0; i < TEXTLENGTH ; ++i )
 	print_textBuffer[i] = 0;
+}
+
+void Print_changeColor( void )
+{
+		if(print_CharacterRedVal == 255){
+			print_CharacterGreenVal = 255;
+			print_CharacterRedVal = 0;
+		}
+		else if(print_CharacterGreenVal == 255){
+			print_CharacterBlueVal = 255;
+			print_CharacterGreenVal = 0;
+		}
+		else if(print_CharacterBlueVal == 255){
+			print_CharacterRedVal = 255;
+			print_CharacterBlueVal = 0;
+		}
+	
 }
 
 

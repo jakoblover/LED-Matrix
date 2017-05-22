@@ -28,7 +28,7 @@ void Timer1_init(void)
 {
 	TCC1.CTRLA = 0b00000111; //PRESCALER CLK_DIV1024
 	TCC1.INTCTRLA = 0b00000001; //Interrupt level LOW
-	TCC1.PER = 20000;
+	TCC1.PER = 10000;
 }
 /*		Timer 1		*/
 
@@ -39,5 +39,8 @@ ISR ( TCC0_OVF_vect )
 
 ISR ( TCC1_OVF_vect )
 {
+	Print_changeColor();
+	Display_clear();
+	Print_outputBuffer();
 	
 }

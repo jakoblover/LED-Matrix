@@ -35,6 +35,7 @@ void	Print_init					(void);
 void	Print_emptyBuffer			(void);
 void	Print_outputBuffer			(void);
 void	Print_character				(void);
+void	Print_changeColor			(void);
 
 
 
