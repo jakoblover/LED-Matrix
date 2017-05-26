@@ -34,6 +34,7 @@ void Print_changeColor( void )
 			print_CharacterRedVal = 255;
 			print_CharacterBlueVal = 0;
 		}
+		else print_CharacterRedVal = 255;
 	
 }
 

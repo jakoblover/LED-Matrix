@@ -6,6 +6,8 @@ Display.c
 
 main.c
 
+Peripherals.c
+
 Print.c
 
 SPI.c

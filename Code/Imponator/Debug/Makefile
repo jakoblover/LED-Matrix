@@ -39,6 +39,7 @@ SUBDIRS :=
 C_SRCS +=  \
 ../Display.c \
 ../main.c \
+../Peripherals.c \
 ../Print.c \
 ../SPI.c \
 ../Timer.c
@@ -53,6 +54,7 @@ ASM_SRCS +=
 OBJS +=  \
 Display.o \
 main.o \
+Peripherals.o \
 Print.o \
 SPI.o \
 Timer.o
@@ -60,6 +62,7 @@ Timer.o
 OBJS_AS_ARGS +=  \
 Display.o \
 main.o \
+Peripherals.o \
 Print.o \
 SPI.o \
 Timer.o
@@ -67,6 +70,7 @@ Timer.o
 C_DEPS +=  \
 Display.d \
 main.d \
+Peripherals.d \
 Print.d \
 SPI.d \
 Timer.d
@@ -74,6 +78,7 @@ Timer.d
 C_DEPS_AS_ARGS +=  \
 Display.d \
 main.d \
+Peripherals.d \
 Print.d \
 SPI.d \
 Timer.d
@@ -92,6 +97,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

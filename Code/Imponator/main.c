@@ -19,6 +19,7 @@
 #include "Timer.h"
 #include "Display.h"
 #include "Print.h"
+#include "Peripherals.h"
 
 
 void clock_init(void);
@@ -29,6 +30,7 @@ int main(void)
 	SPI_init();
 	Timer0_init();
 	Timer1_init();
+	Peripherals_init();
 	
 	
 	
