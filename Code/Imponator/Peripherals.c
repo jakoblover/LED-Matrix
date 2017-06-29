@@ -22,8 +22,8 @@ void Peripherals_init(void){
 
 ISR (PORTD_INT0_vect){
 	if (PORTD.IN & 0b00000001)
-		Print_character();
-	else Print_emptyBuffer();
+		TCC1.PER = 10000;
+	else TCC1.PER = 2000;
 
 	
 }

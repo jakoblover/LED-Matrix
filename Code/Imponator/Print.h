@@ -19,6 +19,7 @@
 
 ///////////////////// Extern Character Definitions ( located in ProgmemData.h ) ////////////////////////////
 extern const char CharacterOmega[] PROGMEM;
+extern const uint8_t IMAGES[19][8] PROGMEM;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -34,7 +35,7 @@ extern const char CharacterOmega[] PROGMEM;
 void	Print_init					(void);
 void	Print_emptyBuffer			(void);
 void	Print_outputBuffer			(void);
-void	Print_character				(void);
+void Print_character(void);
 void	Print_changeColor			(void);
 
 
